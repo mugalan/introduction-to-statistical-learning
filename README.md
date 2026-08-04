@@ -232,7 +232,7 @@ This notebook serves as essential preparation for understanding state-of-the-art
 
 ---
 
-## Application of Conditional Expectation
+## Applications of Conditional Expectation
 
 ### Kalman Filter
 
