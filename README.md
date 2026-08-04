@@ -472,7 +472,7 @@ This Jupyter notebook provides a comprehensive mathematical treatment of **hypot
 6. **Worked Example** - Tests whether the mean of a normal population equals zero, showing all components explicitly: test statistic, rejection region, p-value formula, and power function
 
 #### Google Colab
-* [numerical_data_analysis](https://github.com/mugalan/data-analysis-tool/blob/main/numerical_data_analysis.ipynb)
+* [numerical_data_analysis.ipynb](https://github.com/mugalan/data-analysis-tool/blob/main/numerical_data_analysis.ipynb)
 
 ### Repo Link
 [data-analysis-tool](https://github.com/mugalan/data-analysis-tool)
