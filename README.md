@@ -157,7 +157,7 @@ This notebook serves as essential preparation for understanding state-of-the-art
 
 ## Application of Conditional Expectation
 
-### Kalman Filter: Conditional Expectation in Action
+### Kalman Filter
 
 #### Overview
 The Kalman Filter is a recursive algorithm that computes the conditional expectation of a hidden state given noisy measurements. It elegantly demonstrates how conditional expectation concepts from probability theory translate into practical sequential estimation.
@@ -185,13 +185,23 @@ The notebook shows how:
 
 ### Gaussian Process Regression
 
+#### Overview 
 Gaussian Process Regression (GPR) is a practical application of conditional expectation in a Bayesian framework. Given noisy observations of an underlying process, GPR computes the conditional expectation $\mathbb{E}[X_g \mid \mathscr{Y}_n = y_n]$ to produce both a predictive mean and uncertainty quantification. The approach treats the unknown function as a random variable, enabling probabilistic predictions that respect the correlation structure encoded by a kernel function.
 
-### Key Applications:
+#### Key Applications:
 - **Denoising**: Filtering out measurement noise to recover the latent signal
 - **Interpolation**: Inferring values in regions with missing data
 - **Uncertainty Quantification**: Providing confidence intervals that widen in data-sparse regions
 
 #### Google Colab notebook
 - [gaussian_process_regression.ipynb](./gaussian_process_regression.ipynb) — interactive notebook with theory, derivations, simulations, and visualizations.
+
+### Linear Regression
+
+#### Overview 
+A worked example showing how conditional expectation is used in multivariate linear regression is available in the repository. The notebook derives the conditional distribution Y | X = x (showing E[Y|X=x] = βx + β0 and Var[Y|X=x] = Σν), presents the maximum-likelihood / OLS solution, and includes a hands-on example with a green-building dataset.
+
+#### Google Colab notebook
+- [linear_regression.ipynb](./linear_regression.ipynb) — interactive notebook with theory, derivations, simulations, and visualizations.
+
 
