@@ -182,3 +182,16 @@ The notebook shows how:
 
 #### Google Colab notebook
 - [Kalman_Filter.ipynb](./Kalman_Filter.ipynb) — interactive notebook with theory, derivations, simulations, and visualizations.
+
+### Gaussian Process Regression
+
+Gaussian Process Regression (GPR) is a practical application of conditional expectation in a Bayesian framework. Given noisy observations of an underlying process, GPR computes the conditional expectation $\mathbb{E}[X_g \mid \mathscr{Y}_n = y_n]$ to produce both a predictive mean and uncertainty quantification. The approach treats the unknown function as a random variable, enabling probabilistic predictions that respect the correlation structure encoded by a kernel function.
+
+### Key Applications:
+- **Denoising**: Filtering out measurement noise to recover the latent signal
+- **Interpolation**: Inferring values in regions with missing data
+- **Uncertainty Quantification**: Providing confidence intervals that widen in data-sparse regions
+
+#### Google Colab notebook
+- [gaussian_process_regression.ipynb](./gaussian_process_regression.ipynb) — interactive notebook with theory, derivations, simulations, and visualizations.
+
