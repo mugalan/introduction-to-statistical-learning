@@ -152,3 +152,33 @@ After studying this notebook, readers will understand:
 ### Google Colab notebook
 - introduction_to_conditional_expectations.ipynb — [the full notebook](./introduction_to_conditional_expectations.ipynb).
 This notebook serves as essential preparation for understanding state-of-the-art machine learning methods rooted in Bayesian inference and probabilistic modeling.
+
+---
+
+## Application of Conditional Expectation
+
+### Kalman Filter: Conditional Expectation in Action
+
+#### Overview
+The Kalman Filter is a recursive algorithm that computes the conditional expectation of a hidden state given noisy measurements. It elegantly demonstrates how conditional expectation concepts from probability theory translate into practical sequential estimation.
+
+#### Key Concept
+In the linear-Gaussian setting, the Kalman Filter updates the state estimate $\mathbb{E}[x_k|y_1, \ldots, y_k]$ through two steps:
+- **Predict**: $m_k^- = A_{k-1} m_{k-1}$ (propagate expected state via system dynamics)
+- **Update**: $m_k = m_k^- + K_k(y_k^{\text{obs}} - H_k m_k^-)$ (refine with measurement residual)
+
+The Kalman Gain $K_k$ is an optimal, data-adaptive weighting that balances prediction uncertainty against measurement noise.
+
+#### Examples Included
+- **1-D Tracking**: Constant-velocity motion in one dimension
+- **2-D Tracking**: Position tracking in the $x$-$y$ plane with noisy position measurements
+- **HVAC Thermal Dynamics**: Tracking zone temperature, humidity, and CO₂ concentration from sensor data
+
+#### Connection to Conditional Expectation
+The notebook shows how:
+- Joint Gaussian distributions enable closed-form conditional expectations
+- The conditional covariance $P_k$ quantifies remaining uncertainty (Bayesian posterior)
+- Error dynamics reveal how estimation error decays with better measurements
+
+#### Google Colab notebook
+- [Kalman_Filter.ipynb](./Kalman_Filter.ipynb) — interactive notebook with theory, derivations, simulations, and visualizations.
