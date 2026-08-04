@@ -442,5 +442,40 @@ normalized_data = inspector.create_normalized_data_df()
 2. **How does the tool handle categorical vs. numerical data differently in correlations?** (Pearson for numeric, Cramér's V for categorical, and unified Point-Biserial/Eta for mixed pairs)
 3. **What are the differences between the scaling methods, and when would I use Robust over Standard?** (Robust scaling is less sensitive to outliers, useful for skewed or contaminated datasets)
 
+### Numerical Data Analysis
+
+This Jupyter notebook provides a comprehensive mathematical treatment of **hypothesis testing** in statistics. Here are the key sections:
+
+#### Topics covered:
+
+1. **Overview** - Introduces the basic philosophy: null hypothesis (H₀, status quo) vs. alternative hypothesis (Hₐ, what you're trying to prove)
+
+2. **Measure-Theoretic Definition** - Formalizes hypothesis testing using probability theory, defining:
+   - Statistical models as families of probability measures
+   - Rejection regions and test functions
+   - Power functions and error types (Type I and Type II)
+
+3. **Decision Rule & P-values** - Explains how to:
+   - Construct rejection regions from test statistics
+   - Calculate p-values as the smallest significance level at which you'd reject H₀
+   - Apply the decision rule: reject H₀ if p-value ≤ α
+
+4. **Standard Roadmap** - The five-step process for any hypothesis test:
+   - State hypotheses
+   - Formulate an analysis plan
+   - Analyze sample data
+   - Apply decision rule
+   - Interpret results
+
+5. **Error Trade-off** - Demonstrates that Type I and Type II errors cannot both be eliminated simultaneously (unless distributions are perfectly separable)
+
+6. **Worked Example** - Tests whether the mean of a normal population equals zero, showing all components explicitly: test statistic, rejection region, p-value formula, and power function
+
+#### Google Colab
+* [numerical_data_analysis](https://github.com/mugalan/data-analysis-tool/blob/main/numerical_data_analysis.ipynb)
+
 ### Repo Link
-[https://github.com/mugalan/data-analysis-tool)(https://github.com/mugalan/data-analysis-tool)
+[data-analysis-tool)(https://github.com/mugalan/data-analysis-tool)
+
+* [data_analysis_cookbook.ipynb](https://github.com/mugalan/data-analysis-tool/blob/main/data_analysis_cookbook.ipynb)
+
