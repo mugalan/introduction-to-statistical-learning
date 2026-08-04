@@ -66,10 +66,12 @@ This section summarizes the theory, key results, and a hands-on demonstration pr
 
 ### Overview
 A multivariate normal (Gaussian) models a vector-valued random variable $\mathbf{Z}\in\mathbb{R}^{n+m}$:
+
 $$
 \mathbf{Z} = \begin{bmatrix}\mathbf{X}\\\mathbf{Y}\end{bmatrix},\quad
 \mathbf{Z}\sim\mathcal{N}(\boldsymbol{\mu},\boldsymbol{\Sigma}).
 $$
+
 Here $\boldsymbol{\mu}=\begin{bmatrix}\boldsymbol{\mu}_X\\ \boldsymbol{\mu}_Y\end{bmatrix}$ and the covariance is partitioned as
 $$
 \boldsymbol{\Sigma}=\begin{bmatrix}
