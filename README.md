@@ -205,3 +205,35 @@ A worked example showing how conditional expectation is used in multivariate lin
 - [linear_regression.ipynb](./linear_regression.ipynb) — interactive notebook with theory, derivations, simulations, and visualizations.
 
 
+### Bayesian Inference
+
+A companion Jupyter notebook that gives a concise, measure-theoretic and practical introduction to Bayesian inference. It covers the mathematical foundations, the density (formula) form of Bayes' rule, Bayesian point estimation via conditional expectation, Gaussian conjugate examples, and several concrete examples (coin bias, loan default probability) with interactive visualizations.
+
+#### Overview
+This notebook treats Bayesian inference as "learning under uncertainty" and shows how a prior distribution over an unknown parameter X is updated to a posterior distribution after observing data Y. It emphasizes a measure-theoretic view (priors, likelihoods, and posteriors as probability kernels), shows the density form of Bayes' rule when densities exist, and demonstrates Bayesian point estimation (posterior mean as the conditional expectation and its optimality under squared error).
+
+#### Topics covered (detailed)
+- Motivation: Bayesian inference as rational belief revision; interpretation of parameters as unknown-but-fixed vs. uncertain.
+- Probability-space formulation: X and Y as measurable maps on an underlying probability space; joint, marginal, and conditional laws.
+- Regular conditional distributions and disintegration: posterior and likelihood as conditional probability kernels; the measure-theoretic Bayes identity.
+- Density-level Bayes' rule: derivation of posterior density f(X|Y) ∝ f(Y|X) f_X(X) and normalization via marginal f_Y(Y).
+- Bayesian point estimation: conditional expectation E[X | Y] as the posterior mean; uniqueness and optimality under mean-square error; conditional variance/covariance as remaining uncertainty.
+- Closed-form Gaussian case: joint Gaussian X,Y and the linear update formula for the posterior mean and covariance (Kalman-like gain).
+- Conjugate Beta–Binomial examples:
+  - Coin bias: Beta(α, β) prior, Binomial likelihood → Beta(α+h, β+t) posterior; code to plot prior/posterior and means.
+  - Loan default probability: domain-motivated Beta(5,95) prior updated by Binomial data (e.g., 16 defaults out of 200) to show posterior shift and interpretation.
+- Interactive code: functions that plot prior and posterior Beta densities and annotate prior/posterior means (uses Plotly for interactivity).
+
+#### What you will learn (learning outcomes)
+- How to formalize Bayesian inference in measure-theoretic terms (priors, likelihoods, posterior kernels).
+- How densities arise and how to apply Bayes' rule in practice.
+- Why the posterior mean is a natural Bayesian point estimate and its optimality properties.
+- How conjugate priors (Beta–Binomial, Gaussian–Gaussian) lead to closed-form updates.
+- How to visualize prior-to-posterior updating and interpret shifts in beliefs.
+
+#### Examples & code highlights
+- plot_beta_prior_posterior(n, h, alpha=1, beta_param=1, num_points=1000): visualizes prior and posterior Beta distributions for coin-bias problems and prints prior/posterior means.
+- plot_default_probability_update(n=200, d=16, alpha=5, beta_param=95): visualizes the bank loan-default example and demonstrates how the posterior mean shifts based on observed defaults.
+
+#### Google Colab notebook
+- [Bayesian_Inference_Introduction.ipynb](./Bayesian_Inference_Introduction.ipynb) — interactive notebook with theory, derivations, simulations, and visualizations.
