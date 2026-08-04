@@ -53,6 +53,6 @@ These cells are designed to run inline (Jupyter/Colab) and illustrate the theore
 - Clarifies the differences between discrete and continuous modeling choices and why measure-theoretic language matters (e.g., point probabilities, zero-measure sets).
 - Provides visual intuition and runnable examples that make abstract concepts accessible to practitioners and students.
 
-## Files
+### Google Colab notebook
 - review_of_probability_theory.ipynb — [the full notebook](./review_of_probability_theory.ipynb) with narrative, proofs, examples, and visualizations.
 
