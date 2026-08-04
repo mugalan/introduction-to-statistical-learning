@@ -71,17 +71,17 @@ A multivariate normal (Gaussian) models a vector-valued random variable $\mathbf
 \mathbf{Z}\sim\mathcal{N}(\boldsymbol{\mu},\boldsymbol{\Sigma}).
 \]
 Here $\boldsymbol{\mu}=\begin{bmatrix}\boldsymbol{\mu}_X\\ \boldsymbol{\mu}_Y\end{bmatrix}$ and the covariance is partitioned as
-\[
+$$
 \boldsymbol{\Sigma}=\begin{bmatrix}
-\boldsymbol{\Sigma}_{XX} & \boldsymbol{\Sigma}_{XY}\\[4pt]
+\boldsymbol{\Sigma}_{XX} & \boldsymbol{\Sigma}_{XY}\\[
 \boldsymbol{\Sigma}_{YX} & \boldsymbol{\Sigma}_{YY}
 \end{bmatrix},
-\]
+$$
 with $\boldsymbol{\Sigma}$ symmetric positive definite. The joint density is
-\[
+$$
 f_{\mathbf{Z}}(\mathbf{z}) = \frac{1}{\sqrt{(2\pi)^{n+m}|\boldsymbol{\Sigma}|}}
 \exp\!\left(-\tfrac{1}{2}(\mathbf{z}-\boldsymbol{\mu})^\top\boldsymbol{\Sigma}^{-1}(\mathbf{z}-\boldsymbol{\mu})\right).
-\]
+$$
 
 ### Marginal Distributions
 Marginals of a multivariate normal are themselves Gaussian:
