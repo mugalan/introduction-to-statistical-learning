@@ -475,7 +475,7 @@ This Jupyter notebook provides a comprehensive mathematical treatment of **hypot
 * [numerical_data_analysis](https://github.com/mugalan/data-analysis-tool/blob/main/numerical_data_analysis.ipynb)
 
 ### Repo Link
-[data-analysis-tool)(https://github.com/mugalan/data-analysis-tool)
+[data-analysis-tool](https://github.com/mugalan/data-analysis-tool)
 
 * [data_analysis_cookbook.ipynb](https://github.com/mugalan/data-analysis-tool/blob/main/data_analysis_cookbook.ipynb)
 
