@@ -199,7 +199,7 @@ This single formula unifies:
 The conditional covariance provides the Mean Square Error:
 $$\Sigma_{X|Y} = \Sigma_{XX} - \Sigma_{XY}\Sigma_{YY}^{-1}\Sigma_{YX}$$
 
-$#### **Bayesian Inference and MAP Estimation**
+#### **Bayesian Inference and MAP Estimation**
 - $\mathbb{E}[X|Y]$ represents the Bayesian point estimate
 - For Gaussian models, MAP estimation aligns with conditional expectation
 
@@ -314,3 +314,48 @@ This notebook treats Bayesian inference as "learning under uncertainty" and show
 
 #### Google Colab notebook
 - [Bayesian_Inference_Introduction.ipynb](./Bayesian_Inference_Introduction.ipynb) — interactive notebook with theory, derivations, simulations, and visualizations.
+
+---
+
+## Maximum Entropy Inference
+
+This notebook provides a unified, pedagogical treatment of Jaynes' Principle of Maximum Entropy and its applications across physics and machine learning. Starting from the discrete Shannon entropy, it derives the generalized Boltzmann distribution and shows how the canonical, grand-canonical, and microcanonical ensembles arise as MaxEnt solutions. The continuous (Shannon–Jaynes) formulation and the Gaussian as a maximum-entropy distribution given mean and variance are presented. The notebook connects these ideas to machine learning by deriving the Maximum Entropy (conditional) classifier and showing how logistic regression / softmax arise from constrained entropy maximization. Worked examples include the binary entropy curve, the quantum harmonic oscillator, thermodynamic identities (partition function, free energies, heat capacity), and runnable Plotly code for illustrations.
+
+### Overview
+This repository contains a notebook that explains the Principle of Maximum Entropy (MaxEnt) and demonstrates its deep connections to statistical thermodynamics and machine learning. The content is both theoretical and practical: rigorous derivations are paired with numerical and visual examples.
+
+### What’s included
+- A clear statement of the Principle of Maximum Entropy and its justification as the least-biased inference given constraints.
+- Derivation of the discrete MaxEnt solution and the generalized Boltzmann (exponential-family) distribution.
+- Recovery of statistical mechanics ensembles:
+  - Microcanonical ensemble → equal a priori probabilities and Boltzmann entropy S = kB ln Ω.
+  - Canonical ensemble → partition function Z, temperature T = 1/(kB λ), Helmholtz free energy, and thermodynamic identities.
+  - Grand canonical ensemble → chemical potential μ, grand potential, and Gibbs free energy connections.
+- Thermodynamic relations and fluctuation formulae (e.g., energy variance ↔ heat capacity).
+- Worked example: quantum harmonic oscillator — explicit Z(T), U(T), S(T), and CV(T).
+- Continuous MaxEnt (Shannon–Jaynes) with a discussion of the reference measure m(x) and derivation of the Gaussian as the MaxEnt density given mean and variance.
+- Machine learning application:
+  - Conditional MaxEnt derivation for P(Y|X) and how logistic regression / softmax follows from MaxEnt constraints on feature expectations.
+  - Practical notes on the equivalence between maximizing conditional entropy under feature constraints and training with cross-entropy.
+- Interactive / runnable code snippets:
+  - Plotly visualization of the binary entropy function.
+  - Code scaffolding and examples suitable for Colab or a local Jupyter environment.
+
+### Key equations and identities (high-level)
+- Shannon entropy (discrete): H(p) = −∑ p_j ln p_j
+- MaxEnt solution (discrete): p_j* = (1/Z) exp(−∑ λ_i f_i(x_j)), Z = ∑ exp(−∑ λ_i f_i(x_j))
+- Continuous Shannon–Jaynes entropy: H_c[p] = −∫ p(x) ln(p(x)/m(x)) dx
+- Canonical ensemble: p_j ∝ e^{−E_j/(k_B T)}, Z = ∑ e^{−E_j/(k_B T)}
+- Thermodynamic relations: F = −k_B T ln Z, S = −(∂F/∂T)_V, U = F + TS
+- Fluctuation relation: C_V = (1/(k_B T^2)) (⟨E^2⟩ − ⟨E⟩^2)
+- Conditional MaxEnt → Softmax: P(Y=c | x) = exp(w_c · f(x)) / ∑_l exp(w_l · f(x))
+
+
+### Learning outcomes / key takeaways
+- MaxEnt provides a principled method for constructing least-biased probability models from partial information.
+- Thermodynamic ensembles can be derived as MaxEnt solutions by choosing appropriate macroscopic constraints.
+- The exponential-family structure of MaxEnt underpins many standard probability models and machine learning classifiers (e.g., softmax/logistic regression).
+- Macroscopic thermodynamic quantities (entropy, free energy, heat capacity) follow from the partition function and can be interpreted in terms of microscopic fluctuations.
+
+#### Google Colab notebook
+- [maximum_entropy_inference_statistical_thermodynamics_and_ML.ipynb](./maximum_entropy_inference_statistical_thermodynamics_and_ML.ipynb) — interactive notebook with theory, derivations, simulations, and visualizations.
