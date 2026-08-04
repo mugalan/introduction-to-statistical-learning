@@ -60,6 +60,53 @@ These cells are designed to run inline (Jupyter/Colab) and illustrate the theore
 
 ---
 
+## Introduction to Information Entropy
+
+This notebook surveys the many faces of entropy and information, tracing the concept from its origins in communication theory and thermodynamics to its central role in modern statistics and machine learning. The presentation emphasizes intuition, measure-theoretic foundations, and the differences between discrete and continuous settings.
+
+### Historical context
+- Claude Shannon (1948) formalized "information" as the reduction of uncertainty and introduced information entropy as a rigorous measure of uncertainty in a probability distribution.
+- John von Neumann suggested naming Shannon’s measure “entropy” because of its formal similarity to thermodynamic entropy.
+- Edwin T. Jaynes (1957) extended entropy into statistical inference: maximizing entropy subject to what is known yields the least-biased probability assignment consistent with available information.
+
+### Core concepts (intuitive)
+- Uncertainty: how much you do not know about an outcome before observing it.
+- Self-information (surprisal): how much information a single observed outcome provides; rarer events carry more surprisal.
+- Entropy: the average surprisal of a distribution — the expected amount of uncertainty (or information) in outcomes.
+- Relative entropy / Kullback–Leibler (KL) divergence: a measure of how one probability distribution differs from another; it quantifies the information loss when using one distribution as an approximation of another and is always non-negative.
+- Differential entropy: the continuous analogue of entropy defined relative to a reference measure (e.g., Lebesgue). It can be negative and is sensitive to coordinate scaling.
+- Conditional entropy: the remaining uncertainty about one variable after observing another.
+- Mutual information: the reduction in uncertainty about one variable due to observing another; symmetric and always non-negative.
+
+### Measure-theoretic viewpoint (why the reference measure matters)
+- Entropy is fundamentally a comparison of a probability measure to a reference measure. In discrete settings the counting measure is natural; in continuous settings the Lebesgue measure is typical.
+- A distribution can have zero entropy relative to one reference measure and infinitely negative entropy relative to another. This resolves apparent paradoxes (e.g., point masses).
+
+### Discrete vs. continuous differences (practical takeaways)
+- Discrete entropy is always non-negative and interpretable as expected code length (bits or nats).
+- Differential entropy can be negative and changes with scaling; it should be interpreted as a relative quantity (volume of uncertainty) rather than an absolute "number of bits."
+- Gaussian distributions maximize differential entropy among continuous distributions with fixed variance. As a continuous distribution concentrates into a point (delta), differential entropy tends to negative infinity, while the corresponding discrete entropy (if treated as a point mass) is zero.
+
+### Important properties and identities
+- KL divergence is non-negative and equals zero only when the two distributions are identical (almost everywhere).
+- Mutual information can be expressed as the difference between entropy and conditional entropy (information gained by observing another variable).
+- Independence implies conditional entropy equals marginal entropy and mutual information is zero.
+
+### Examples & visual intuition included in the notebook
+- Visual comparisons showing lower vs. higher entropy distributions (concentrated vs. spread-out measures).
+- Entropy of Gaussian distributions and the divergence of differential entropy as variance shrinks.
+- A two-coin example that demonstrates computing entropy, conditional entropy, and mutual information for simple discrete variables.
+
+### Practical notes for data science and ML
+- Use KL divergence to assess model vs. true distribution differences (e.g., in variational inference).
+- Mutual information is useful for feature selection and quantifying dependency between variables.
+- Be careful when interpreting continuous entropy numerically — absolute values depend on units and scaling; consider relative measures (KL, mutual information) or discretization/quantization if you need bit-count interpretations.
+
+### Google Colab notebook
+- introduction_to_information_entropy.ipynb — [the full notebook](./introduction_to_information_entropy.ipynb).
+
+---
+
 ## Multivariate Gaussian Distributions 
 
 ### Overview
