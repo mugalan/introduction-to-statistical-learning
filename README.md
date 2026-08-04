@@ -54,5 +54,5 @@ These cells are designed to run inline (Jupyter/Colab) and illustrate the theore
 - Provides visual intuition and runnable examples that make abstract concepts accessible to practitioners and students.
 
 ## Files
-- review_of_probability_theory.ipynb — [the full notebook](/https://github.com/mugalan/introduction-to-statistical-learning/edit/main/review_of_probability_theory.ipynb) with narrative, proofs, examples, and visualizations.
+- review_of_probability_theory.ipynb — [the full notebook](./review_of_probability_theory.ipynb) with narrative, proofs, examples, and visualizations.
 
