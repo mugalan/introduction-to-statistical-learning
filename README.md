@@ -32,7 +32,7 @@ The notebook develops probability from first principles using the language of me
    - Partition examples on the unit disk (vertical vs horizontal) visualized with Plotly
    - Simple Python checks for σ-algebra closure and measurability
 
-3## Key concepts explained
+### Key concepts explained
 - Event as a subset of Ω; unions/intersections/complements map to logical OR/AND/NOT
 - σ-algebra: closure under complement and countable unions; captures what is measurable
 - Filtration idea (increasing σ-algebras) — relates to observing more information over time (Bayesian update intuition)
