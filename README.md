@@ -1,6 +1,8 @@
 # introduction-to-statistical-learning
 The aim of this repo is to introduce the essential elements of data science. Specifically, by providing an introduction to the ideas and techniques of data collection and management, summarizing and visualizing of data, statistical inference, and machine learning.
 
+---
+
 ## Review of Probability Theory
 
 This notebook provides a concise, measure-theoretic review of foundational probability concepts used throughout statistical learning. It combines formal definitions, intuitive explanations, simple numerical checks, and interactive visualizations (Plotly) to help bridge the gap between theory and practice.
@@ -56,3 +58,97 @@ These cells are designed to run inline (Jupyter/Colab) and illustrate the theore
 ### Google Colab notebook
 - review_of_probability_theory.ipynb — [the full notebook](./review_of_probability_theory.ipynb) with narrative, proofs, examples, and visualizations.
 
+---
+
+## Introduction to Conditional Expectation
+
+### Overview
+This notebook provides a rigorous, measure-theoretic introduction to conditional expectations, a foundational concept in probability theory, statistical learning, and Bayesian inference. It bridges the gap between abstract mathematical definitions and practical applications in machine learning.
+
+### Key Sections
+
+#### 1. **Definition of Conditional Expectation** 
+- Introduces $\mathbb{E}[X|Y]$ as a unique random variable satisfying two properties:
+  - **Measurability**: The conditional expectation is a function of $Y$ (via the Doob-Dynkin Lemma)
+  - **Partial Averaging**: The integral property ensures that averages match on sets distinguishable by $Y$
+- Grounded in the Radon-Nikodym Theorem from measure theory
+
+#### 2. **Conditional Density ($f_{X|Y}$)**
+- Derives the relationship between joint, marginal, and conditional distributions
+- Shows how the conditional probability measure $P_{X|Y=y}$ is constructed
+- Establishes the **Product Rule**:
+  - Continuous case: $f_{X,Y}(x,y) = f_{X|Y}(x|y)f_Y(y)$
+  - Discrete case: $p_{X,Y}(x,y) = p_{X|Y}(x|y)p_Y(y)$
+- Introduces the **Disintegration Theorem**, which decomposes joint measures into conditional slices
+
+#### 3. **Evaluating Conditional Expectation at $Y=y$**
+- Clarifies the distinction between $\mathbb{E}[X|Y]$ (a random variable) and $\mathbb{E}[X|Y=y]$ (a numerical value)
+- Shows that $\mathbb{E}[X|Y=y] = \int_{\mathscr{X}} x \, f_{X|Y}(x|y) \, dx$
+- Explains the conditional random variable $X|Y=y$ as a family of distributions parameterized by $y$
+
+#### 4. **Important Results**
+
+##### **The Factorization Property**
+- If $W$ is $\sigma(Y)$-measurable, then $\mathbb{E}[XW|Y] = W\mathbb{E}[X|Y]$
+- Critical for manipulating conditional expectations when one term is already known
+
+##### **Law of Total Expectation (Tower Property)**
+$$\mathbb{E}[X] = \mathbb{E}[\mathbb{E}[X|Y]]$$
+- Enables solving complex problems by conditioning on an intermediate variable
+- Includes Python verification demonstrating the principle with simulated data
+
+##### **Law of Total Variance**
+$$\mathrm{Var}(X) = \mathbb{E}[\mathrm{Var}(X|Y)] + \mathrm{Var}(\mathbb{E}[X|Y])$$
+- **Unexplained Variance**: Remaining uncertainty after knowing $Y$
+- **Explained Variance**: How much $Y$ accounts for $X$'s variability
+
+##### **Optimality of Conditional Estimation**
+- $\mathbb{E}[X|Y]$ is the unique minimizer of Mean Square Error (MSE)
+- Establishes: $\mathbb{E}[(X - \mathbb{E}[X|Y])^2] = \mathbb{E}[\mathrm{Var}(X|Y)]$
+- Any other estimator produces higher MSE
+
+#### 5. **Applications to Machine Learning**
+
+##### **Unified Multivariate Gaussian Framework**
+For jointly normal distributions, the conditional expectation has a closed form:
+$$\mathbb{E}[X|Y] = \mu_X + \Sigma_{XY}\Sigma_{YY}^{-1}(Y - \mu_Y)$$
+
+This single formula unifies:
+- Linear Regression (LR)
+- Ordinary Least Squares (OLS)
+- Kalman Filtering
+- Gaussian Process Regression (GPR)
+
+The conditional covariance provides the Mean Square Error:
+$$\Sigma_{X|Y} = \Sigma_{XX} - \Sigma_{XY}\Sigma_{YY}^{-1}\Sigma_{YX}$$
+
+$#### **Bayesian Inference and MAP Estimation**
+- $\mathbb{E}[X|Y]$ represents the Bayesian point estimate
+- For Gaussian models, MAP estimation aligns with conditional expectation
+
+##### **Dimensionality Reduction**
+- Factor Analysis and Probabilistic PCA leverage conditional distribution properties to model high-dimensional data through low-dimensional latent variables
+
+##### **Active Learning and Bayesian Optimization**
+- Use conditional covariance to determine optimal sampling locations
+- Prioritize regions of highest remaining uncertainty
+
+##### **Information Theory**
+- Conditional expectations underpin mutual information and information-theoretic measures in ML
+
+### Learning Objectives
+After studying this notebook, readers will understand:
+1. The formal measure-theoretic definition of conditional expectations
+2. How conditional distributions decompose joint distributions
+3. Core theorems connecting to probability and statistics (Tower Property, Total Variance)
+4. The optimality of $\mathbb{E}[X|Y]$ in estimation theory
+5. Practical connections to Bayesian inference, linear models, and modern ML algorithms
+
+### Prerequisites
+- Familiarity with probability spaces and measure theory
+- Understanding of random variables, distributions, and expectations
+- Linear algebra (for multivariate applications)
+
+### Google Colab notebook
+- introduction_to_conditional_expectations.ipynb — [the full notebook](./introduction_to_conditional_expectations.ipynb).
+This notebook serves as essential preparation for understanding state-of-the-art machine learning methods rooted in Bayesian inference and probabilistic modeling.
