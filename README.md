@@ -60,92 +60,30 @@ These cells are designed to run inline (Jupyter/Colab) and illustrate the theore
 
 ---
 
-## Multivariate Gaussian Distributions
-
-This section summarizes the theory, key results, and a hands-on demonstration provided in `Multivariate_Gaussian_Distributions.ipynb`. It gives the mathematical definitions, intuition, and practical code notes so readers can use the notebook to explore joint, marginal, and conditional properties of multivariate normal distributions.
+## Multivariate Gaussian Distributions 
 
 ### Overview
-A multivariate normal (Gaussian) models a vector-valued random variable $\mathbf{Z}\in\mathbb{R}^{n+m}$:
+- A multivariate Gaussian models a vector-valued random variable by specifying its center (mean) and how its components vary together (covariance). The covariance is typically described in blocks that separate one group of variables from another and their cross-dependencies.
+- The joint density of a multivariate Gaussian is the familiar bell-shaped form determined entirely by the mean and covariance.
 
-$\mathbf{Z} = ,\quad \mathbf{Z}\sim\mathcal{N}(\boldsymbol{\mu},\boldsymbol{\Sigma}).$
+### Marginal distributions
+- Any subset of components of a multivariate Gaussian is itself Gaussian. The marginal distribution for a subset uses the corresponding block of the full mean and the matching block of the full covariance.
 
-Here $\boldsymbol{\mu}=\begin{bmatrix}\boldsymbol{\mu}_X\\ \boldsymbol{\mu}_Y\end{bmatrix}$ and the covariance is partitioned as
-$$
-\boldsymbol{\Sigma}=\begin{bmatrix}
-\boldsymbol{\Sigma}_{XX} & \boldsymbol{\Sigma}_{XY}\\
-\boldsymbol{\Sigma}_{YX} & \boldsymbol{\Sigma}_{YY}
-\end{bmatrix},
-$$
-with $\boldsymbol{\Sigma}$ symmetric positive definite. The joint density is
-$$
-f_{\mathbf{Z}}(\mathbf{z}) = \frac{1}{\sqrt{(2\pi)^{n+m}|\boldsymbol{\Sigma}|}}
-\exp\!\left(-\tfrac{1}{2}(\mathbf{z}-\boldsymbol{\mu})^\top\boldsymbol{\Sigma}^{-1}(\mathbf{z}-\boldsymbol{\mu})\right).
-$$
+### Conditional distributions
+- Conditioning one subset of variables on observed values of another yields a Gaussian distribution for the conditioned subset.
+- The conditional mean is an affine (linear + offset) function of the observed values, so observing the other variables shifts the mean predictably.
+- The conditional covariance does not depend on the particular observed values; observing the other variables reduces uncertainty, so the conditional covariance is smaller (in the positive-semidefinite sense) than the marginal covariance.
 
-### Marginal Distributions
-Marginals of a multivariate normal are themselves Gaussian:
-- $\mathbf{X}\sim\mathcal{N}(\boldsymbol{\mu}_X,\boldsymbol{\Sigma}_{XX})$,
-- $\mathbf{Y}\sim\mathcal{N}(\boldsymbol{\mu}_Y,\boldsymbol{\Sigma}_{YY})$.
+### Law of total variance (matrix form)
+- The overall (marginal) covariance of a subset decomposes into two parts: the expected conditional covariance (the residual uncertainty remaining after observing the other variables) plus the covariance of the conditional means (the part of variance explained by the other variables).
+- Intuitively, this says total variation = unexplained variation + explained variation.
 
-Derivation: integrate the joint density over the complementary variables; the evaluation uses block-matrix identities (Schur complements) and completing the square. Determinant identity $|\boldsymbol{\Sigma}| = |\boldsymbol{\Sigma}_{XX}|\;|\boldsymbol{\Sigma}_{YY}-\boldsymbol{\Sigma}_{YX}\boldsymbol{\Sigma}_{XX}^{-1}\boldsymbol{\Sigma}_{XY}|$ appears in the computation.
+### Entropy and mutual information
+- The differential entropy of a multivariate Gaussian is a simple function of its covariance; roughly speaking, larger covariance “volume” means larger entropy.
+- Mutual information between two groups of variables measures how much observing one group reduces uncertainty about the other. For Gaussians, this mutual information depends only on the relevant covariance blocks and can be computed directly from them, reflecting the reduction in uncertainty when one set is observed.
 
-### Conditional Distributions
-The conditional distribution of $\mathbf{X}$ given $\mathbf{Y}=\mathbf{y}$ is Gaussian with:
-- Conditional mean
-  $$
-  \mathbb{E}[\mathbf{X}\mid \mathbf{Y}=\mathbf{y}] = \boldsymbol{\mu}_X + \boldsymbol{\Sigma}_{XY}\boldsymbol{\Sigma}_{YY}^{-1}(\mathbf{y}-\boldsymbol{\mu}_Y),
-  $$
-  which is a linear regression of $\mathbf{X}$ on $\mathbf{Y}$.
-- Conditional covariance (independent of $\mathbf{y}$)
-  $$
-  \operatorname{Cov}(\mathbf{X}\mid\mathbf{Y}) = \boldsymbol{\Sigma}_{X\mid Y} = \boldsymbol{\Sigma}_{XX} - \boldsymbol{\Sigma}_{XY}\boldsymbol{\Sigma}_{YY}^{-1}\boldsymbol{\Sigma}_{YX}.
-  $$
-
-Key intuitions:
-- Observing $\mathbf{Y}$ shifts the mean of $\mathbf{X}$ by the regression term.
-- The conditional covariance is smaller (in the PSD sense) than the marginal covariance: knowing $\mathbf{Y}$ reduces uncertainty about $\mathbf{X}$.
-
-### Law of Total Variance (Matrix Form)
-For the Gaussian setting,
-$$
-\operatorname{Var}(\mathbf{X}) = \mathbb{E}[\operatorname{Var}(\mathbf{X}\mid\mathbf{Y})] + \operatorname{Var}\big(\mathbb{E}[\mathbf{X}\mid\mathbf{Y}]\big),
-$$
-so
-$$
-\boldsymbol{\Sigma}_{XX} = \boldsymbol{\Sigma}_{X\mid Y} + \boldsymbol{\Sigma}_{XY}\boldsymbol{\Sigma}_{YY}^{-1}\boldsymbol{\Sigma}_{YX}.
-$$
-The term $\boldsymbol{\Sigma}_{XY}\boldsymbol{\Sigma}_{YY}^{-1}\boldsymbol{\Sigma}_{YX}$ is the variance explained by $\mathbf{Y}$; $\boldsymbol{\Sigma}_{X\mid Y}$ is the residual (unexplained) variance.
-
-### Entropy and Mutual Information
-Differential entropy of a multivariate Gaussian $\mathbf{Z}\in\mathbb{R}^d$:
-$$
-h(\mathbf{Z}) = \tfrac{1}{2}\ln\!\big((2\pi e)^d|\boldsymbol{\Sigma}|\big).
-$$
-Conditional entropy for $\mathbf{X}\mid\mathbf{Y}$ uses $\boldsymbol{\Sigma}_{X\mid Y}$. Mutual information between $\mathbf{X}$ and $\mathbf{Y}$:
-$$
-I(\mathbf{X};\mathbf{Y}) = h(\mathbf{X}) - h(\mathbf{X}\mid\mathbf{Y}) = \tfrac{1}{2}\ln\!\left(\frac{|\boldsymbol{\Sigma}_{XX}|}{|\boldsymbol{\Sigma}_{X\mid Y}|}\right).
-$$
-Equivalently (symmetrically),
-$$
-I(\mathbf{X};\mathbf{Y}) = \tfrac{1}{2}\ln\!\left(\frac{|\boldsymbol{\Sigma}_{XX}||\boldsymbol{\Sigma}_{YY}|}{|\boldsymbol{\Sigma}|}\right).
-$$
-
-Interpretation: mutual information quantifies the reduction in uncertainty about $\mathbf{X}$ when $\mathbf{Y}$ is observed (and vice versa in the symmetric form).
-
-### Numerical Demonstration (Notebook)
-The notebook demonstrates the above using a bivariate example:
-- Parameters: $\boldsymbol{\mu}=[0,0]$, $\boldsymbol{\Sigma}=\begin{bmatrix}1 & 0.7\\0.7 & 1\end{bmatrix}$.
-- Fix $y=1.2$ to compare:
-  - joint contour plot (ellipse showing correlation),
-  - marginals for $X$ and $Y$,
-  - conditional density $p(X\mid Y=1.2)$ showing shifted mean and smaller variance than marginal $p(X)$.
-- The notebook uses NumPy, SciPy (multivariate_normal, norm), and Plotly for interactive visualization.
-
-
-### Practical Notes & Applications
-- Linear regression, Kalman filters, Gaussian processes, and many signal-processing / estimation tasks rely on these conditional formulas because they give closed-form posterior expectations and covariances.
-- Inference: the conditional mean is the Bayes/least-squares estimate of $\mathbf{X}$ given $\mathbf{Y}$ when joint Gaussianity holds.
-- Dimensionality: Schur complements and determinant identities are useful for block-wise computations and numerical stability when inverting covariances.
+### Practical note
+- These closed-form marginal and conditional formulas are why multivariate Gaussians are used widely in linear regression, Kalman filtering, Gaussian process regression, and other estimation tasks where analytic updates and uncertainty quantification are valuable.
 
 ### Google Colab notebook
 - Multivariate_Gaussian_Distributions.ipynb — [the full notebook](./Multivariate_Gaussian_Distributions.ipynb)
