@@ -67,10 +67,10 @@ This section summarizes the theory, key results, and a hands-on demonstration pr
 ### Overview
 A multivariate normal (Gaussian) models a vector-valued random variable $\mathbf{Z}\in\mathbb{R}^{n+m}$:
 
-$$
+$
 \mathbf{Z} = \begin{bmatrix}\mathbf{X}\\\mathbf{Y}\end{bmatrix},\quad
 \mathbf{Z}\sim\mathcal{N}(\boldsymbol{\mu},\boldsymbol{\Sigma}).
-$$
+$
 
 Here $\boldsymbol{\mu}=\begin{bmatrix}\boldsymbol{\mu}_X\\ \boldsymbol{\mu}_Y\end{bmatrix}$ and the covariance is partitioned as
 $$
@@ -137,7 +137,7 @@ Interpretation: mutual information quantifies the reduction in uncertainty about
 
 ### Numerical Demonstration (Notebook)
 The notebook demonstrates the above using a bivariate example:
-- Parameters: $\boldsymbol{\mu}=[0,0]$, $\boldsymbol{\Sigma}=\begin{bmatrix}1 & 0.7\\[2pt]0.7 & 1\end{bmatrix}$.
+- Parameters: $\boldsymbol{\mu}=[0,0]$, $\boldsymbol{\Sigma}=\begin{bmatrix}1 & 0.7\\0.7 & 1\end{bmatrix}$.
 - Fix $y=1.2$ to compare:
   - joint contour plot (ellipse showing correlation),
   - marginals for $X$ and $Y$,
