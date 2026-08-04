@@ -67,13 +67,13 @@ This section summarizes the theory, key results, and a hands-on demonstration pr
 ### Overview
 A multivariate normal (Gaussian) models a vector-valued random variable $\mathbf{Z}\in\mathbb{R}^{n+m}$:
 $$
-\mathbf{Z} = \begin{bmatrix}\mathbf{X}\\[4pt]\mathbf{Y}\end{bmatrix},\quad
+\mathbf{Z} = \begin{bmatrix}\mathbf{X}\\\mathbf{Y}\end{bmatrix},\quad
 \mathbf{Z}\sim\mathcal{N}(\boldsymbol{\mu},\boldsymbol{\Sigma}).
 $$
 Here $\boldsymbol{\mu}=\begin{bmatrix}\boldsymbol{\mu}_X\\ \boldsymbol{\mu}_Y\end{bmatrix}$ and the covariance is partitioned as
 $$
 \boldsymbol{\Sigma}=\begin{bmatrix}
-\boldsymbol{\Sigma}_{XX} & \boldsymbol{\Sigma}_{XY}\\[
+\boldsymbol{\Sigma}_{XX} & \boldsymbol{\Sigma}_{XY}\\
 \boldsymbol{\Sigma}_{YX} & \boldsymbol{\Sigma}_{YY}
 \end{bmatrix},
 $$
@@ -93,14 +93,14 @@ Derivation: integrate the joint density over the complementary variables; the ev
 ### Conditional Distributions
 The conditional distribution of $\mathbf{X}$ given $\mathbf{Y}=\mathbf{y}$ is Gaussian with:
 - Conditional mean
-  \[
+  $$
   \mathbb{E}[\mathbf{X}\mid \mathbf{Y}=\mathbf{y}] = \boldsymbol{\mu}_X + \boldsymbol{\Sigma}_{XY}\boldsymbol{\Sigma}_{YY}^{-1}(\mathbf{y}-\boldsymbol{\mu}_Y),
-  \]
+  $$
   which is a linear regression of $\mathbf{X}$ on $\mathbf{Y}$.
 - Conditional covariance (independent of $\mathbf{y}$)
-  \[
+  $$
   \operatorname{Cov}(\mathbf{X}\mid\mathbf{Y}) = \boldsymbol{\Sigma}_{X\mid Y} = \boldsymbol{\Sigma}_{XX} - \boldsymbol{\Sigma}_{XY}\boldsymbol{\Sigma}_{YY}^{-1}\boldsymbol{\Sigma}_{YX}.
-  \]
+  $$
 
 Key intuitions:
 - Observing $\mathbf{Y}$ shifts the mean of $\mathbf{X}$ by the regression term.
@@ -108,28 +108,28 @@ Key intuitions:
 
 ### Law of Total Variance (Matrix Form)
 For the Gaussian setting,
-\[
+$$
 \operatorname{Var}(\mathbf{X}) = \mathbb{E}[\operatorname{Var}(\mathbf{X}\mid\mathbf{Y})] + \operatorname{Var}\big(\mathbb{E}[\mathbf{X}\mid\mathbf{Y}]\big),
-\]
+$$
 so
-\[
+$$
 \boldsymbol{\Sigma}_{XX} = \boldsymbol{\Sigma}_{X\mid Y} + \boldsymbol{\Sigma}_{XY}\boldsymbol{\Sigma}_{YY}^{-1}\boldsymbol{\Sigma}_{YX}.
-\]
+$$
 The term $\boldsymbol{\Sigma}_{XY}\boldsymbol{\Sigma}_{YY}^{-1}\boldsymbol{\Sigma}_{YX}$ is the variance explained by $\mathbf{Y}$; $\boldsymbol{\Sigma}_{X\mid Y}$ is the residual (unexplained) variance.
 
 ### Entropy and Mutual Information
 Differential entropy of a multivariate Gaussian $\mathbf{Z}\in\mathbb{R}^d$:
-\[
+$$
 h(\mathbf{Z}) = \tfrac{1}{2}\ln\!\big((2\pi e)^d|\boldsymbol{\Sigma}|\big).
-\]
+$$
 Conditional entropy for $\mathbf{X}\mid\mathbf{Y}$ uses $\boldsymbol{\Sigma}_{X\mid Y}$. Mutual information between $\mathbf{X}$ and $\mathbf{Y}$:
-\[
+$$
 I(\mathbf{X};\mathbf{Y}) = h(\mathbf{X}) - h(\mathbf{X}\mid\mathbf{Y}) = \tfrac{1}{2}\ln\!\left(\frac{|\boldsymbol{\Sigma}_{XX}|}{|\boldsymbol{\Sigma}_{X\mid Y}|}\right).
-\]
+$$
 Equivalently (symmetrically),
-\[
+$$
 I(\mathbf{X};\mathbf{Y}) = \tfrac{1}{2}\ln\!\left(\frac{|\boldsymbol{\Sigma}_{XX}||\boldsymbol{\Sigma}_{YY}|}{|\boldsymbol{\Sigma}|}\right).
-\]
+$$
 
 Interpretation: mutual information quantifies the reduction in uncertainty about $\mathbf{X}$ when $\mathbf{Y}$ is observed (and vice versa in the symmetric form).
 
