@@ -231,9 +231,9 @@ This notebook treats Bayesian inference as "learning under uncertainty" and show
 - How conjugate priors (Beta–Binomial, Gaussian–Gaussian) lead to closed-form updates.
 - How to visualize prior-to-posterior updating and interpret shifts in beliefs.
 
-#### Examples & code highlights
-- plot_beta_prior_posterior(n, h, alpha=1, beta_param=1, num_points=1000): visualizes prior and posterior Beta distributions for coin-bias problems and prints prior/posterior means.
-- plot_default_probability_update(n=200, d=16, alpha=5, beta_param=95): visualizes the bank loan-default example and demonstrates how the posterior mean shifts based on observed defaults.
+#### Examples 
+- Item Response Theory (IRT), which uses Bayesian hierarchical models to infer examinees' latent abilities and item parameters while properly accounting for uncertainty and pooling information across items/people,
+- Click‑Through Rate (CTR) prediction, which uses Bayesian logistic or hierarchical models to produce probabilistic estimates of user click probabilities, enable online updating, and support uncertainty-aware decision making.
 
 #### Google Colab notebook
 - [Bayesian_Inference_Introduction.ipynb](./Bayesian_Inference_Introduction.ipynb) — interactive notebook with theory, derivations, simulations, and visualizations.
