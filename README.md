@@ -362,13 +362,11 @@ This repository contains a notebook that explains the Principle of Maximum Entro
 
 ---
 
-I'll explore the sample-answers directory to understand its contents and provide a summary for your README.Based on the contents of the `sample-answers` directory, here's a summary you can add to your README.md:
-
 ## Assignments/Sample Answers
 
 The `sample-answers` directory contains worked solutions to assignments covering key statistical learning and data science concepts:
 
-- **[Bayesian_Inference_Assignment_Answers.ipynb(./Bayesian_Inference_Assignment_Answers.ipynb)]** - Solutions demonstrating Bayesian inference techniques and applications
+- **[Bayesian_Inference_Assignment_Answers.ipynb](./Bayesian_Inference_Assignment_Answers.ipynb)** - Solutions demonstrating Bayesian inference techniques and applications
 - **[conditional_expectation_assignment_answers.ipynb](./conditional_expectation_assignment_answers.ipynb)** - Worked examples on conditional expectation and related probability concepts
 - **[data_analysis_assignment_answers.ipynb](./data_analysis_assignment_answers.ipynb)** - Comprehensive solutions for data analysis tasks and methodologies
 - **[data_analysis_cookbook_sample_answer.ipynb](./data_analysis_cookbook_sample_answer.ipynb)** - Practical cookbook-style examples for common data analysis workflows
