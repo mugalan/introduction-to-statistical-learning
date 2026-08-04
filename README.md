@@ -376,4 +376,71 @@ The `sample-answers` directory contains worked solutions to assignments covering
 
 These Jupyter notebooks provide reference implementations and detailed explanations for the core topics covered in this introduction to statistical learning, serving as both learning resources and verification guides for students working through the assignments.
 
+---
 
+## Data Analysis Toolbox
+
+**data-analysis-tool** is a Python library that automates data cleaning, exploration, and interactive visualization for data science workflows, with built-in support for Google Colab. It handles common preprocessing tasks like missing value imputation, outlier detection, scaling, encoding, and generates rich Plotly-based visualizations for both exploratory analysis and correlation mapping.
+
+#### Stack
+
+- **Language(s):** Python (84% Jupyter Notebook content, 16% Python code)
+- **Runtime / Framework:** Python 3.9+ with NumPy as core dependency
+- **Notable libraries:** NumPy (data manipulation), Plotly (interactive visualizations), setuptools (packaging)
+
+### How it's organized
+
+```
+data-analysis-tool/
+├── data_analysis/
+│   ├── __init__.py           # Module exports (DataInspector, PlottingMethods)
+│   └── core.py               # Main implementation (152KB) with all core classes
+├── data_analysis_cookbook.ipynb   # Comprehensive usage examples
+├── numerical_data_analysis.ipynb   # Numerical analysis examples
+├── pyproject.toml             # PEP 517 project config, optional Plotly dependency
+├── version.py                 # Version string (0.1.0)
+└── README.md                  # Documentation and quick start guide
+```
+
+**How it fits together:** The core functionality lives in `data_analysis/core.py`, which defines two main classes:
+- **`DataInspector`**: Handles data loading (auto-converting nulls like `'?'`, `'N/A'`, `'NULL'` to proper types), cleaning (deduplication, IQR-based outlier removal, mean/median/mode imputation), scaling (Min-Max, Z-score, Robust), encoding (One-Hot, Ordinal, Uniform), and statistical inspection (Pearson correlation, Cramér's V for categorical associations).
+- **`PlottingMethods`**: Wraps Plotly to generate interactive charts (violin plots, scatter plots, histograms, bar charts, pie charts) and heatmaps for correlation analysis.
+
+The repo includes two companion Jupyter notebooks (`data_analysis_cookbook.ipynb` and `numerical_data_analysis.ipynb`) that demonstrate these workflows in action.
+
+### How to run it
+
+**Install the package:**
+
+```bash
+# Basic installation (NumPy only)
+pip install "git+https://github.com/mugalan/data-analysis-tool.git"
+
+# Full installation with plotting support
+pip install "git+https://github.com/mugalan/data-analysis-tool.git[plotting]"
+```
+
+**Basic workflow (in Python or Colab):**
+
+```python
+from data_analysis import DataInspector
+
+inspector = DataInspector()
+inspector.upload_data()  # Interactive file upload in Colab
+inspector.handle_missing_values(strategy='median')
+inspector.remove_duplicates()
+inspector.plot_numerical(['Age', 'Salary'])
+normalized_data = inspector.create_normalized_data_df()
+```
+
+**Explore examples:**
+- Open `data_analysis_cookbook.ipynb` or `numerical_data_analysis.ipynb` in Jupyter/Colab for guided walkthroughs.
+
+### Try asking
+
+1. **What missing value strategies are supported?** (e.g., `inspector.handle_missing_values()` with mean, median, mode, or constant fill strategies)
+2. **How does the tool handle categorical vs. numerical data differently in correlations?** (Pearson for numeric, Cramér's V for categorical, and unified Point-Biserial/Eta for mixed pairs)
+3. **What are the differences between the scaling methods, and when would I use Robust over Standard?** (Robust scaling is less sensitive to outliers, useful for skewed or contaminated datasets)
+
+### Repo Link
+[https://github.com/mugalan/data-analysis-tool)(https://github.com/mugalan/data-analysis-tool)
