@@ -366,10 +366,10 @@ This repository contains a notebook that explains the Principle of Maximum Entro
   - Code scaffolding and examples suitable for Colab or a local Jupyter environment.
 
 ### Key equations and identities (high-level)
-- Shannon entropy (discrete): $H(p) = −\Sum p_j \ln{p_j}
-- MaxEnt solution (discrete): $p_j^* = (1/Z) \exp(−\sum \lambda_i f_i(x_j))$, $Z = \sum \exp(−\sum_{i} \lambda_i f_i(x_j))$
+- Shannon entropy (discrete): $H(p) = −\sum_{j} p_j \ln{p_j}
+- MaxEnt solution (discrete): $p_j^* = (1/Z) \exp(−\sum \lambda_i f_i(x_j))$, $Z = \sum_{j} \exp(−\sum_{i} \lambda_i f_i(x_j))$
 - Continuous Shannon–Jaynes entropy: $H_c[p] = −\int p(x) \ln{(p(x)/m(x))} dx$
-- Canonical ensemble: $p_j \propto e^{−E_j/(k_B T)}$, $Z = \sum e^{−E_j/(k_B T)}$
+- Canonical ensemble: $p_j \propto e^{−E_j/(k_B T)}$, $Z = \sum_{j} e^{−E_j/(k_B T)}$
 - Thermodynamic relations: $F = −k_B T \ln{Z}, $S = −(\partial F/\partial T)_V$, $U = F + TS$
 - Fluctuation relation: $C_V = (1/(k_B T^2)) (⟨E^2⟩ − ⟨E⟩^2)$
 - Conditional MaxEnt → Softmax: $P(Y=c | x) = \exp(w_c · f(x)) / \sum_{l} \exp(w_l · f(x))$
