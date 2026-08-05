@@ -272,7 +272,7 @@ The Kalman Gain $K_k$ is an optimal, data-adaptive weighting that balances predi
 
 #### Examples Included
 - **1-D Tracking**: Constant-velocity motion in one dimension
-- **2-D Tracking**: Position tracking in the $x$-$y$ plane with noisy position measurements
+- **2-D Tracking**: Position tracking in the $x$ - $y$ plane with noisy position measurements
 - **HVAC Thermal Dynamics**: Tracking zone temperature, humidity, and CO₂ concentration from sensor data
 
 #### Connection to Conditional Expectation
@@ -352,7 +352,7 @@ This repository contains a notebook that explains the Principle of Maximum Entro
 - A clear statement of the Principle of Maximum Entropy and its justification as the least-biased inference given constraints.
 - Derivation of the discrete MaxEnt solution and the generalized Boltzmann (exponential-family) distribution.
 - Recovery of statistical mechanics ensembles:
-  - Microcanonical ensemble → equal a priori probabilities and Boltzmann entropy $S = k_B \ln{\Omega}$.
+  - Microcanonical ensemble → equal a priori probabilities and Boltzmann entropy $S=k_B \ln{\Omega}$.
   - Canonical ensemble → partition function $Z$, temperature $T = 1/(k_B \lambda)$, Helmholtz free energy, and thermodynamic identities.
   - Grand canonical ensemble → chemical potential $\mu$, grand potential, and Gibbs free energy connections.
 - Thermodynamic relations and fluctuation formulae (e.g., energy variance ↔ heat capacity).
@@ -367,12 +367,12 @@ This repository contains a notebook that explains the Principle of Maximum Entro
 
 ### Key equations and identities (high-level)
 - Shannon entropy (discrete): $H(p) = −\Sum p_j \ln{p_j}
-- MaxEnt solution (discrete): $p_j^* = (1/Z) \exp(−\sum \lambda_i f_i(x_j))$, $Z = \sum_{j} \exp(−\sum_{i} \lambda_i f_i(x_j))$
+- MaxEnt solution (discrete): $p_j^* = (1/Z) \exp(−\sum \lambda_i f_i(x_j))$, $Z = \sum \exp(−\sum_{i} \lambda_i f_i(x_j))$
 - Continuous Shannon–Jaynes entropy: $H_c[p] = −\int p(x) \ln{(p(x)/m(x))} dx$
 - Canonical ensemble: $p_j \prop e^{−E_j/(k_B T)}$, $Z = \sum e^{−E_j/(k_B T)}$
 - Thermodynamic relations: $F = −k_B T \ln{Z}, $S = −(\partial F/\partial T)_V$, $U = F + TS$
 - Fluctuation relation: $C_V = (1/(k_B T^2)) (⟨E^2⟩ − ⟨E⟩^2)$
-- Conditional MaxEnt → Softmax: $P(Y=c | x) = \exp(w_c · f(x)) / \Sum_l exp(w_l · f(x))$
+- Conditional MaxEnt → Softmax: $P(Y=c | x) = \exp(w_c · f(x)) / \Sum exp(w_l · f(x))$
 
 
 ### Learning outcomes / key takeaways
