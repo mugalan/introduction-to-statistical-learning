@@ -14,7 +14,7 @@ Here is a quick overview of what is available:
   - Bayesian Inference — Measure-theoretic Bayes, conjugate examples (Beta–Binomial), and visualization of prior→posterior updates. [Open notebook](./Bayesian_Inference_Introduction.ipynb)
 - Maximum Entropy Inference — Jaynes’ MaxEnt principle, derivation of exponential-family solutions, thermodynamic connections, and ML applications (softmax/logistic). [Open notebook](./maximum_entropy_inference_statistical_thermodynamics_and_ML.ipynb)
 - Assignments / Sample Answers — Worked solutions for assignments across the repo topics (useful reference answers):
-  - Bayesian_Inference_Assignment_Answers.ipynb — [Open](./Bayesian_Inference_Assignment_Answers.ipynb)
+  - Bayesian_Inference_Assignment_Answers.ipynb — [Open](./sample-answers/Bayesian_Inference_Assignment_Answers.ipynb)
   - conditional_expectation_assignment_answers.ipynb — [Open](./conditional_expectation_assignment_answers.ipynb)
   - data_analysis_assignment_answers.ipynb — [Open](./data_analysis_assignment_answers.ipynb)
   - data_analysis_cookbook_sample_answer.ipynb — [Open](./data_analysis_cookbook_sample_answer.ipynb)
