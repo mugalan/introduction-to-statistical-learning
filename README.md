@@ -15,12 +15,12 @@ Here is a quick overview of what is available:
 - Maximum Entropy Inference — Jaynes’ MaxEnt principle, derivation of exponential-family solutions, thermodynamic connections, and ML applications (softmax/logistic). [Open notebook](./maximum_entropy_inference_statistical_thermodynamics_and_ML.ipynb)
 - Assignments / Sample Answers — Worked solutions for assignments across the repo topics (useful reference answers):
   - Bayesian_Inference_Assignment_Answers.ipynb — [Open](./sample-answers/Bayesian_Inference_Assignment_Answers.ipynb)
-  - conditional_expectation_assignment_answers.ipynb — [Open](./conditional_expectation_assignment_answers.ipynb)
-  - data_analysis_assignment_answers.ipynb — [Open](./data_analysis_assignment_answers.ipynb)
-  - data_analysis_cookbook_sample_answer.ipynb — [Open](./data_analysis_cookbook_sample_answer.ipynb)
-  - entropy_assignment_answers.ipynb — [Open](./entropy_assignment_answers.ipynb)
-  - fundamentals_of_probability_assignment_answers.ipynb — [Open](./fundamentals_of_probability_assignment_answers.ipynb)
-  - max_entropy_inference_assignment_answers.ipynb — [Open](./max_entropy_inference_assignment_answers.ipynb)
+  - conditional_expectation_assignment_answers.ipynb — [Open](./sample-answers/conditional_expectation_assignment_answers.ipynb)
+  - data_analysis_assignment_answers.ipynb — [Open](./sample-answers/data_analysis_assignment_answers.ipynb)
+  - data_analysis_cookbook_sample_answer.ipynb — [Open](./sample-answers/data_analysis_cookbook_sample_answer.ipynb)
+  - entropy_assignment_answers.ipynb — [Open](./sample-answers/entropy_assignment_answers.ipynb)
+  - fundamentals_of_probability_assignment_answers.ipynb — [Open](./sample-answers/fundamentals_of_probability_assignment_answers.ipynb)
+  - max_entropy_inference_assignment_answers.ipynb — [Open](./sample-answers/max_entropy_inference_assignment_answers.ipynb)
 - Data Analysis Toolbox (data-analysis-tool) — A small Python library for cleaning, exploration, and interactive Plotly visualizations; includes package and example notebooks:
   - data_analysis_cookbook.ipynb — usage cookbook and examples. [Open](https://github.com/mugalan/data-analysis-tool/blob/main/data_analysis_cookbook.ipynb)
   - numerical_data_analysis.ipynb — mathematical treatment and worked examples for hypothesis testing. [Open](https://github.com/mugalan/data-analysis-tool/blob/main/numerical_data_analysis.ipynb)
