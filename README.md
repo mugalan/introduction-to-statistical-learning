@@ -104,17 +104,17 @@ This notebook surveys the many faces of entropy and information, tracing the con
 
 ### Measure-theoretic viewpoint (why the reference measure matters)
 - Entropy is fundamentally a comparison of a probability measure to a reference measure. In discrete settings the counting measure is natural; in continuous settings the Lebesgue measure is typical.
-- A distribution can have zero entropy relative to one reference measure and infinitely negative entropy relative to another. This resolves apparent paradoxes (e.g., point masses).
+- Entropy depends on the choice of reference measure. In particular, a point mass has discrete entropy zero, whereas it has no density with respect to Lebesgue measure and therefore its differential entropy is not defined. By contrast, the differential entropy of an absolutely continuous distribution such as a Gaussian tends to negative infinity as it concentrates toward a point mass.
 
 ### Discrete vs. continuous differences (practical takeaways)
-- Discrete entropy is always non-negative and interpretable as expected code length (bits or nats).
+- Discrete entropy is always non-negative. With logarithms base 2, it gives the ideal average information content in bits and provides the fundamental lower bound associated with lossless source coding (with standard coding qualifications).
 - Differential entropy can be negative and changes with scaling; it should be interpreted as a relative quantity (volume of uncertainty) rather than an absolute "number of bits."
-- Gaussian distributions maximize differential entropy among continuous distributions with fixed variance. As a continuous distribution concentrates into a point (delta), differential entropy tends to negative infinity, while the corresponding discrete entropy (if treated as a point mass) is zero.
+- Gaussian distributions maximize differential entropy among continuous distributions with fixed variance. For example, as the variance of a Gaussian tends to zero, its differential entropy tends to negative infinity; the limiting point mass itself has no differential entropy with respect to Lebesgue measure, while its discrete entropy is zero.
 
 ### Important properties and identities
 - KL divergence is non-negative and equals zero only when the two distributions are identical (almost everywhere).
-- Mutual information can be expressed as the difference between entropy and conditional entropy (information gained by observing another variable).
-- Independence implies conditional entropy equals marginal entropy and mutual information is zero.
+- Mutual information is defined generally by $I(X;Y)=D_{\mathrm{KL}}(P_{XY}\|P_X\otimes P_Y)$. When the relevant entropies are well-defined and the difference is meaningful, it can also be expressed as the difference between entropy and conditional entropy (information gained by observing another variable).
+- Independence implies mutual information is zero; when the corresponding entropies are well-defined, it also implies that conditional entropy equals marginal entropy.
 
 ### Examples & visual intuition included in the notebook
 - Visual comparisons showing lower vs. higher entropy distributions (concentrated vs. spread-out measures).
@@ -169,7 +169,7 @@ This notebook provides a rigorous, measure-theoretic introduction to conditional
 ### Key Sections
 
 #### 1. **Definition of Conditional Expectation** 
-- Introduces $\mathbb{E}[X|Y]$ as a unique random variable satisfying two properties:
+- Introduces $\mathbb{E}[X|Y]$ as a random variable, unique up to almost-sure equality, satisfying two properties:
   - **Measurability**: The conditional expectation is a function of $Y$ (via the Doob-Dynkin Lemma)
   - **Partial Averaging**: The integral property ensures that averages match on sets distinguishable by $Y$
 - Grounded in the Radon-Nikodym Theorem from measure theory
@@ -180,17 +180,17 @@ This notebook provides a rigorous, measure-theoretic introduction to conditional
 - Establishes the **Product Rule**:
   - Continuous case: $f_{X,Y}(x,y) = f_{X|Y}(x|y)f_Y(y)$
   - Discrete case: $p_{X,Y}(x,y) = p_{X|Y}(x|y)p_Y(y)$
-- Introduces the **Disintegration Theorem**, which decomposes joint measures into conditional slices
+- Introduces the **Disintegration Theorem**, which, under appropriate regularity conditions (for example, standard Borel spaces), decomposes joint measures into conditional slices
 
 #### 3. **Evaluating Conditional Expectation at $Y=y$**
-- Clarifies the distinction between $\mathbb{E}[X|Y]$ (a random variable) and $\mathbb{E}[X|Y=y]$ (a numerical value)
-- Shows that $\mathbb{E}[X|Y=y] = \int_{\mathscr{X}} x  f_{X|Y}(x|y) dx$
+- Clarifies the distinction between $\mathbb{E}[X|Y]$ (a random variable, defined up to almost-sure equality) and $\mathbb{E}[X|Y=y]$ (a numerical value for a chosen version of the conditional distribution, defined for $P_Y$-almost every $y$)
+- Shows that $\mathbb{E}[X|Y=y] = \int_{\mathscr{X}} x  f_{X|Y}(x|y) dx$ whenever the conditional density exists and the expectation is finite
 - Explains the conditional random variable $X|Y=y$ as a family of distributions parameterized by $y$
 
 #### 4. **Important Results**
 
 ##### **The Factorization Property**
-- If $W$ is $\sigma(Y)$-measurable, then $\mathbb{E}[XW|Y] = W\mathbb{E}[X|Y]$
+- If $W$ is $\sigma(Y)$-measurable and the relevant random variables are integrable, then $\mathbb{E}[XW|Y] = W\mathbb{E}[X|Y]$
 - Critical for manipulating conditional expectations when one term is already known
 
 ##### **Law of Total Expectation (Tower Property)**
@@ -204,17 +204,17 @@ $$\mathrm{Var}(X) = \mathbb{E}[\mathrm{Var}(X|Y)] + \mathrm{Var}(\mathbb{E}[X|Y]
 - **Explained Variance**: How much $Y$ accounts for $X$'s variability
 
 ##### **Optimality of Conditional Estimation**
-- $\mathbb{E}[X|Y]$ is the unique minimizer of Mean Square Error (MSE)
+- For $X\in L^2$, $\mathbb{E}[X|Y]$ is the unique minimizer, up to almost-sure equality, of Mean Square Error (MSE) among $\sigma(Y)$-measurable square-integrable estimators
 - Establishes: $\mathbb{E}[(X - \mathbb{E}[X|Y])^2] = \mathbb{E}[\mathrm{Var}(X|Y)]$
 - Any other estimator produces higher MSE
 
 #### 5. **Applications to Machine Learning**
 
 ##### **Unified Multivariate Gaussian Framework**
-For jointly normal distributions, the conditional expectation has a closed form:
+For jointly normal distributions with nonsingular $\Sigma_{YY}$, the conditional expectation has a closed form:
 $$\mathbb{E}[X|Y] = \mu_X + \Sigma_{XY}\Sigma_{YY}^{-1}(Y - \mu_Y)$$
 
-This single formula unifies:
+This single formula underlies or connects closely to:
 - Linear Regression (LR)
 - Ordinary Least Squares (OLS)
 - Kalman Filtering
@@ -224,8 +224,8 @@ The conditional covariance provides the Mean Square Error:
 $$\Sigma_{X|Y} = \Sigma_{XX} - \Sigma_{XY}\Sigma_{YY}^{-1}\Sigma_{YX}$$
 
 #### **Bayesian Inference and MAP Estimation**
-- $\mathbb{E}[X|Y]$ represents the Bayesian point estimate
-- For Gaussian models, MAP estimation aligns with conditional expectation
+- $\mathbb{E}[X|Y]$ is the Bayesian point estimator under squared-error loss
+- For a Gaussian posterior, MAP estimation aligns with conditional expectation because the posterior mean and mode coincide
 
 ##### **Dimensionality Reduction**
 - Factor Analysis and Probabilistic PCA leverage conditional distribution properties to model high-dimensional data through low-dimensional latent variables
@@ -268,7 +268,7 @@ In the linear-Gaussian setting, the Kalman Filter updates the state estimate $\m
 - **Predict**: $m_k^- = A_{k-1} m_{k-1}$ (propagate expected state via system dynamics)
 - **Update**: $m_k = m_k^- + K_k(y_k^{\text{obs}} - H_k m_k^-)$ (refine with measurement residual)
 
-The Kalman Gain $K_k$ is an optimal, data-adaptive weighting that balances prediction uncertainty against measurement noise.
+The Kalman Gain $K_k$ is an optimal weighting, determined by the propagated uncertainty and measurement model, that balances prediction uncertainty against measurement noise.
 
 #### Examples Included
 - **1-D Tracking**: Constant-velocity motion in one dimension
@@ -279,7 +279,7 @@ The Kalman Gain $K_k$ is an optimal, data-adaptive weighting that balances predi
 The notebook shows how:
 - Joint Gaussian distributions enable closed-form conditional expectations
 - The conditional covariance $P_k$ quantifies remaining uncertainty (Bayesian posterior)
-- Error dynamics reveal how estimation error decays with better measurements
+- Error dynamics and covariance updates reveal how measurements reduce estimation uncertainty
 
 #### Google Colab notebook
 - [Kalman_Filter.ipynb](./Kalman_Filter.ipynb) — interactive notebook with theory, derivations, simulations, and visualizations.
@@ -287,12 +287,12 @@ The notebook shows how:
 ### Gaussian Process Regression
 
 #### Overview 
-Gaussian Process Regression (GPR) is a practical application of conditional expectation in a Bayesian framework. Given noisy observations of an underlying process, GPR computes the conditional expectation $\mathbb{E}[X_g \mid \mathscr{Y}_n = y_n]$ to produce both a predictive mean and uncertainty quantification. The approach treats the unknown function as a random variable, enabling probabilistic predictions that respect the correlation structure encoded by a kernel function.
+Gaussian Process Regression (GPR) is a practical application of conditional expectation in a Bayesian framework. Given noisy observations of an underlying process, GPR computes the conditional expectation $\mathbb{E}[X_g \mid \mathscr{Y}_n = y_n]$ to produce both a predictive mean and uncertainty quantification. The approach treats the unknown function as a random function (a stochastic process), enabling probabilistic predictions that respect the correlation structure encoded by a kernel function.
 
 #### Key Applications:
 - **Denoising**: Filtering out measurement noise to recover the latent signal
 - **Interpolation**: Inferring values in regions with missing data
-- **Uncertainty Quantification**: Providing confidence intervals that widen in data-sparse regions
+- **Uncertainty Quantification**: Providing posterior credible or predictive intervals, typically wider in data-sparse regions depending on the kernel, noise model, and nearby observations
 
 #### Google Colab notebook
 - [gaussian_process_regression.ipynb](./gaussian_process_regression.ipynb) — interactive notebook with theory, derivations, simulations, and visualizations.
@@ -318,10 +318,10 @@ This notebook treats Bayesian inference as "learning under uncertainty" and show
 - Probability-space formulation: X and Y as measurable maps on an underlying probability space; joint, marginal, and conditional laws.
 - Regular conditional distributions and disintegration: posterior and likelihood as conditional probability kernels; the measure-theoretic Bayes identity.
 - Density-level Bayes' rule: derivation of posterior density $f(X|Y) \propto f(Y|X) f_X(X)$ and normalization via marginal $f_Y(Y)$.
-- Bayesian point estimation: conditional expectation $\mathbb{E}[X | Y]$ as the posterior mean; uniqueness and optimality under mean-square error; conditional variance/covariance as remaining uncertainty.
+- Bayesian point estimation: conditional expectation $\mathbb{E}[X | Y]$ as the posterior mean; uniqueness up to almost-sure equality and optimality under mean-square error; conditional variance/covariance as remaining uncertainty.
 - Closed-form Gaussian case: joint Gaussian X,Y and the linear update formula for the posterior mean and covariance (Kalman-like gain).
 - Conjugate Beta–Binomial examples:
-  - Coin bias: $\mathrm{Beta}(\alpha, \beta)$ prior, Binomial likelihood → $\mathrm{Beta}(\alpha+h, \beta+t)$ posterior; code to plot prior/posterior and means.
+  - Coin bias: $\mathrm{Beta}(\alpha, \beta)$ prior, Binomial likelihood with $h$ heads and $t$ tails → $\mathrm{Beta}(\alpha+h, \beta+t)$ posterior; code to plot prior/posterior and means.
   - Loan default probability: domain-motivated $\mathrm{Beta}(5,95)$ prior updated by Binomial data (e.g., 16 defaults out of 200) to show posterior shift and interpretation.
 - Interactive code: functions that plot prior and posterior Beta densities and annotate prior/posterior means (uses Plotly for interactivity).
 
@@ -352,12 +352,12 @@ This repository contains a notebook that explains the Principle of Maximum Entro
 - A clear statement of the Principle of Maximum Entropy and its justification as the least-biased inference given constraints.
 - Derivation of the discrete MaxEnt solution and the generalized Boltzmann (exponential-family) distribution.
 - Recovery of statistical mechanics ensembles:
-  - Microcanonical ensemble → equal a priori probabilities and Boltzmann entropy $S=k_B \ln{\Omega}$.
+  - Microcanonical ensemble → equal a priori probabilities on the fixed-energy shell and Boltzmann entropy $S=k_B \ln{\Omega}$.
   - Canonical ensemble → partition function $Z$, temperature $T = 1/(k_B \lambda)$, Helmholtz free energy, and thermodynamic identities.
   - Grand canonical ensemble → chemical potential $\mu$, grand potential, and Gibbs free energy connections.
 - Thermodynamic relations and fluctuation formulae (e.g., energy variance ↔ heat capacity).
 - Worked example: quantum harmonic oscillator — explicit $Z(T), U(T), S(T)$, and $C_V(T)$.
-- Continuous MaxEnt (Shannon–Jaynes) with a discussion of the reference measure $m(x)$ and derivation of the Gaussian as the MaxEnt density given mean and variance.
+- Continuous MaxEnt (Shannon–Jaynes) with a discussion of the reference density $m(x)$ (equivalently, the underlying reference measure) and derivation of the Gaussian as the MaxEnt density given mean and variance.
 - Machine learning application:
   - Conditional MaxEnt derivation for $P(Y|X)$ and how logistic regression / softmax follows from MaxEnt constraints on feature expectations.
   - Practical notes on the equivalence between maximizing conditional entropy under feature constraints and training with cross-entropy.
@@ -366,11 +366,11 @@ This repository contains a notebook that explains the Principle of Maximum Entro
   - Code scaffolding and examples suitable for Colab or a local Jupyter environment.
 
 ### Key equations and identities (high-level)
-- Shannon entropy (discrete): $H(p) = −\sum_{j} p_j \ln{p_j}
+- Shannon entropy (discrete): $H(p) = −\sum_{j} p_j \ln{p_j}$
 - MaxEnt solution (discrete): $p_j^* = (1/Z) \exp(−\sum \lambda_i f_i(x_j))$, $Z = \sum_{j} \exp(−\sum_{i} \lambda_i f_i(x_j))$
 - Continuous Shannon–Jaynes entropy: $H_c[p] = −\int p(x) \ln{(p(x)/m(x))} dx$
 - Canonical ensemble: $p_j \propto e^{−E_j/(k_B T)}$, $Z = \sum_{j} e^{−E_j/(k_B T)}$
-- Thermodynamic relations: $F = −k_B T \ln{Z}, $S = −(\partial F/\partial T)_V$, $U = F + TS$
+- Thermodynamic relations: $F = −k_B T \ln{Z}$, $S = −(\partial F/\partial T)_V$, $U = F + TS$
 - Fluctuation relation: $C_V = (1/(k_B T^2)) (⟨E^2⟩ − ⟨E⟩^2)$
 - Conditional MaxEnt → Softmax: $P(Y=c | x) = \exp(w_c · f(x)) / \sum_{l} \exp(w_l · f(x))$
 
@@ -502,4 +502,3 @@ This Jupyter notebook provides a comprehensive mathematical treatment of **hypot
 [data-analysis-tool](https://github.com/mugalan/data-analysis-tool)
 
 * [data_analysis_cookbook.ipynb](https://github.com/mugalan/data-analysis-tool/blob/main/data_analysis_cookbook.ipynb)
-
