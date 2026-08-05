@@ -372,7 +372,7 @@ This repository contains a notebook that explains the Principle of Maximum Entro
 - Canonical ensemble: $p_j \prop e^{−E_j/(k_B T)}$, $Z = \sum e^{−E_j/(k_B T)}$
 - Thermodynamic relations: $F = −k_B T \ln{Z}, $S = −(\partial F/\partial T)_V$, $U = F + TS$
 - Fluctuation relation: $C_V = (1/(k_B T^2)) (⟨E^2⟩ − ⟨E⟩^2)$
-- Conditional MaxEnt → Softmax: $P(Y=c | x) = \exp(w_c · f(x)) / \Sum exp(w_l · f(x))$
+- Conditional MaxEnt → Softmax: $P(Y=c | x) = \exp(w_c · f(x)) / \sum \exp(w_l · f(x))$
 
 
 ### Learning outcomes / key takeaways
