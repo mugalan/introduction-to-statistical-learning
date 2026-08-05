@@ -34,35 +34,35 @@ This notebook provides a concise, measure-theoretic review of foundational proba
 ### Overview
 The notebook develops probability from first principles using the language of measure theory. It covers:
 - Sample spaces and events
-- σ-algebras and their role as "available information"
+- $\sigma$-algebras and their role as "available information"
 - Measures and measure-theoretic integration
 - Probability measures, discrete (PMF) and continuous (PDF) formulations
-- Key examples: counting measure, Lebesgue measure, Borel σ-algebra, and the Normal distribution
+- Key examples: counting measure, Lebesgue measure, Borel $\sigma$-algebra, and the Normal distribution
 - Intuition-building examples and interactive visualizations (die partitions, unit disk partitions, coin PMF slider, Gaussian sliders)
 
 ### Contents (major sections)
 1. Foundations of Probability Spaces
    - Sample space, events, set operations as logical operations
-2. σ-algebras
-   - Definition, motivation, examples (trivial σ-algebra, power set, Borel σ-algebra)
+2. $\sigma$-algebras
+   - Definition, motivation, examples (trivial $\sigma$-algebra, power set, Borel $\sigma$-algebra)
    - Role in representing information and measurability
 3. Measure spaces and integration
    - Definition of a measure, countable additivity, integration w.r.t. a measure
    - Examples: counting measure, Lebesgue (volume) measure
 4. Probability spaces
-   - Definition of a probability measure P on (Ω, F)
+   - Definition of a probability measure P on $(\Omega, F)$
    - PMF for discrete spaces and PDF (Radon–Nikodym derivative) for continuous spaces
 5. Worked examples and visualizations
    - Bernoulli/coin PMF and interactive bar plot
-   - Normal distribution with sliders for μ and σ
+   - Normal distribution with sliders for $\mu$ and $\sigma$
    - Partition examples on the unit disk (vertical vs horizontal) visualized with Plotly
-   - Simple Python checks for σ-algebra closure and measurability
+   - Simple Python checks for $\sigma$-algebra closure and measurability
 
 ### Key concepts explained
 - Event as a subset of Ω; unions/intersections/complements map to logical OR/AND/NOT
 - σ-algebra: closure under complement and countable unions; captures what is measurable
 - Filtration idea (increasing σ-algebras) — relates to observing more information over time (Bayesian update intuition)
-- Measure vs. probability measure: normalization P(Ω) = 1
+- Measure vs. probability measure: normalization $P(\Omega) = 1$
 - Absolute continuity and the Radon–Nikodym theorem: when a PDF exists relative to Lebesgue measure
 - Distinctions between discrete and continuous probability representations (PMF vs PDF)
 - Dimensionality and zero-measure intuition (points/lines/surfaces in higher-dimensional volume measure)
@@ -70,7 +70,7 @@ The notebook develops probability from first principles using the language of me
 ### Interactive code & visualizations
 The notebook includes multiple interactive Plotly visualizations:
 - Interactive PMF slider for coin toss (change p for Heads)
-- Gaussian PDF with sliders for μ and σ
+- Gaussian PDF with sliders for $\mu$ and $\sigma$
 - Plotly scatter-based visualizations for partitions of the unit disk
 These cells are designed to run inline (Jupyter/Colab) and illustrate the theoretical concepts visually.
 
@@ -300,7 +300,7 @@ Gaussian Process Regression (GPR) is a practical application of conditional expe
 ### Linear Regression
 
 #### Overview 
-A worked example showing how conditional expectation is used in multivariate linear regression is available in the repository. The notebook derives the conditional distribution $Y | X = x$ (showing $\mathbb{E}[Y|X=x] = \beta x + \beta_0$ and $\operatorname{Var}[Y|X=x] = \Sigma_v$), presents the maximum-likelihood / OLS solution, and includes a hands-on example with a green-building dataset.
+A worked example showing how conditional expectation is used in multivariate linear regression is available in the repository. The notebook derives the conditional distribution $Y | X = x$ (showing $\mathbb{E}[Y|X=x] = \beta x + \beta_0$ and ${Var}[Y|X=x] = \Sigma_v$), presents the maximum-likelihood / OLS solution, and includes a hands-on example with a green-building dataset.
 
 #### Google Colab notebook
 - [linear_regression.ipynb](./linear_regression.ipynb) — interactive notebook with theory, derivations, simulations, and visualizations.
@@ -321,7 +321,7 @@ This notebook treats Bayesian inference as "learning under uncertainty" and show
 - Bayesian point estimation: conditional expectation $\mathbb{E}[X | Y]$ as the posterior mean; uniqueness and optimality under mean-square error; conditional variance/covariance as remaining uncertainty.
 - Closed-form Gaussian case: joint Gaussian X,Y and the linear update formula for the posterior mean and covariance (Kalman-like gain).
 - Conjugate Beta–Binomial examples:
-  - Coin bias: ${Beta}(\alpha, \bata)$ prior, Binomial likelihood → ${Beta}(\alpha+h, \beta+t)$ posterior; code to plot prior/posterior and means.
+  - Coin bias: ${Beta}(\alpha, \beta)$ prior, Binomial likelihood → ${Beta}(\alpha+h, \beta+t)$ posterior; code to plot prior/posterior and means.
   - Loan default probability: domain-motivated ${Beta}(5,95)$ prior updated by Binomial data (e.g., 16 defaults out of 200) to show posterior shift and interpretation.
 - Interactive code: functions that plot prior and posterior Beta densities and annotate prior/posterior means (uses Plotly for interactivity).
 
@@ -354,7 +354,7 @@ This repository contains a notebook that explains the Principle of Maximum Entro
 - Recovery of statistical mechanics ensembles:
   - Microcanonical ensemble → equal a priori probabilities and Boltzmann entropy $S = k_B \ln{\Omega}$.
   - Canonical ensemble → partition function $Z$, temperature $T = 1/(k_B \lambda)$, Helmholtz free energy, and thermodynamic identities.
-  - Grand canonical ensemble → chemical potential μ, grand potential, and Gibbs free energy connections.
+  - Grand canonical ensemble → chemical potential $\mu$, grand potential, and Gibbs free energy connections.
 - Thermodynamic relations and fluctuation formulae (e.g., energy variance ↔ heat capacity).
 - Worked example: quantum harmonic oscillator — explicit $Z(T), U(T), S(T)$, and $C_V(T)$.
 - Continuous MaxEnt (Shannon–Jaynes) with a discussion of the reference measure $m(x)$ and derivation of the Gaussian as the MaxEnt density given mean and variance.
@@ -472,7 +472,7 @@ This Jupyter notebook provides a comprehensive mathematical treatment of **hypot
 
 #### Topics covered:
 
-1. **Overview** - Introduces the basic philosophy: null hypothesis (H₀, status quo) vs. alternative hypothesis (Hₐ, what you're trying to prove)
+1. **Overview** - Introduces the basic philosophy: null hypothesis ($H_0$, status quo) vs. alternative hypothesis ($H_a$, what you're trying to prove)
 
 2. **Measure-Theoretic Definition** - Formalizes hypothesis testing using probability theory, defining:
    - Statistical models as families of probability measures
