@@ -22,8 +22,8 @@ Here is a quick overview of what is available:
   - fundamentals_of_probability_assignment_answers.ipynb — [Open](./fundamentals_of_probability_assignment_answers.ipynb)
   - max_entropy_inference_assignment_answers.ipynb — [Open](./max_entropy_inference_assignment_answers.ipynb)
 - Data Analysis Toolbox (data-analysis-tool) — A small Python library for cleaning, exploration, and interactive Plotly visualizations; includes package and example notebooks:
-  - data_analysis_cookbook.ipynb — usage cookbook and examples. [Open](./data_analysis_cookbook.ipynb)
-  - numerical_data_analysis.ipynb — mathematical treatment and worked examples for hypothesis testing. [Open](./numerical_data_analysis.ipynb)
+  - data_analysis_cookbook.ipynb — usage cookbook and examples. [Open](https://github.com/mugalan/data-analysis-tool/blob/main/data_analysis_cookbook.ipynb)
+  - numerical_data_analysis.ipynb — mathematical treatment and worked examples for hypothesis testing. [Open](https://github.com/mugalan/data-analysis-tool/blob/main/numerical_data_analysis.ipynb)
 
 
 
