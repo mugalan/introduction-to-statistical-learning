@@ -1,6 +1,32 @@
 # introduction-to-statistical-learning
 The aim of this repo is to introduce the essential elements of data science. Specifically, by providing an introduction to the ideas and techniques of data collection and management, summarizing and visualizing of data, statistical inference, and machine learning.
 
+Here is a quick overview of what is available:
+
+- Review of Probability Theory — A concise, measure-theoretic introduction to probability foundations; includes interactive visualizations and examples. [Open notebook](./review_of_probability_theory.ipynb)
+- Introduction to Information Entropy — Survey of entropy, KL divergence, mutual information, and discrete vs. continuous distinctions with visual examples. [Open notebook](./introduction_to_information_entropy.ipynb)
+- Multivariate Gaussian Distributions — Formulas and intuition for joint, marginal, and conditional Gaussians; entropy and mutual information for Gaussian models. [Open notebook](./Multivariate_Gaussian_Distributions.ipynb)
+- Introduction to Conditional Expectation — Measure-theoretic definition, properties (tower law, factorization), and connections to estimation and ML. [Open notebook](./introduction_to_conditional_expectations.ipynb)
+- Applications of Conditional Expectation — Practical applied notebooks that show conditional expectation in action:
+  - Kalman Filter — Recursive state estimation examples and simulations (1-D, 2-D, HVAC). [Open notebook](./Kalman_Filter.ipynb)
+  - Gaussian Process Regression — Bayesian nonparametric regression, interpolation, and uncertainty quantification. [Open notebook](./gaussian_process_regression.ipynb)
+  - Linear Regression — Conditional distribution derivation and links to OLS/estimation. [Open notebook](./linear_regression.ipynb)
+  - Bayesian Inference — Measure-theoretic Bayes, conjugate examples (Beta–Binomial), and visualization of prior→posterior updates. [Open notebook](./Bayesian_Inference_Introduction.ipynb)
+- Maximum Entropy Inference — Jaynes’ MaxEnt principle, derivation of exponential-family solutions, thermodynamic connections, and ML applications (softmax/logistic). [Open notebook](./maximum_entropy_inference_statistical_thermodynamics_and_ML.ipynb)
+- Assignments / Sample Answers — Worked solutions for assignments across the repo topics (useful reference answers):
+  - Bayesian_Inference_Assignment_Answers.ipynb — [Open](./Bayesian_Inference_Assignment_Answers.ipynb)
+  - conditional_expectation_assignment_answers.ipynb — [Open](./conditional_expectation_assignment_answers.ipynb)
+  - data_analysis_assignment_answers.ipynb — [Open](./data_analysis_assignment_answers.ipynb)
+  - data_analysis_cookbook_sample_answer.ipynb — [Open](./data_analysis_cookbook_sample_answer.ipynb)
+  - entropy_assignment_answers.ipynb — [Open](./entropy_assignment_answers.ipynb)
+  - fundamentals_of_probability_assignment_answers.ipynb — [Open](./fundamentals_of_probability_assignment_answers.ipynb)
+  - max_entropy_inference_assignment_answers.ipynb — [Open](./max_entropy_inference_assignment_answers.ipynb)
+- Data Analysis Toolbox (data-analysis-tool) — A small Python library for cleaning, exploration, and interactive Plotly visualizations; includes package and example notebooks:
+  - data_analysis_cookbook.ipynb — usage cookbook and examples. [Open](./data_analysis_cookbook.ipynb)
+  - numerical_data_analysis.ipynb — mathematical treatment and worked examples for hypothesis testing. [Open](./numerical_data_analysis.ipynb)
+
+
+
 ---
 
 ## Review of Probability Theory
