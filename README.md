@@ -302,7 +302,7 @@ Gaussian Process Regression (GPR) is a practical application of conditional expe
 ### Linear Regression
 
 #### Overview 
-A worked example showing how conditional expectation is used in multivariate linear regression is available in the repository. The notebook derives the conditional distribution Y | X = x (showing E[Y|X=x] = βx + β0 and Var[Y|X=x] = Σν), presents the maximum-likelihood / OLS solution, and includes a hands-on example with a green-building dataset.
+A worked example showing how conditional expectation is used in multivariate linear regression is available in the repository. The notebook derives the conditional distribution $Y | X = x$ (showing $\mathbb{E}[Y|X=x] = \beta x + \beta_0$ and $\operatorname{Var}[Y|X=x] = \Sigma_v$), presents the maximum-likelihood / OLS solution, and includes a hands-on example with a green-building dataset.
 
 #### Google Colab notebook
 - [linear_regression.ipynb](./linear_regression.ipynb) — interactive notebook with theory, derivations, simulations, and visualizations.
@@ -319,12 +319,12 @@ This notebook treats Bayesian inference as "learning under uncertainty" and show
 - Motivation: Bayesian inference as rational belief revision; interpretation of parameters as unknown-but-fixed vs. uncertain.
 - Probability-space formulation: X and Y as measurable maps on an underlying probability space; joint, marginal, and conditional laws.
 - Regular conditional distributions and disintegration: posterior and likelihood as conditional probability kernels; the measure-theoretic Bayes identity.
-- Density-level Bayes' rule: derivation of posterior density f(X|Y) ∝ f(Y|X) f_X(X) and normalization via marginal f_Y(Y).
-- Bayesian point estimation: conditional expectation E[X | Y] as the posterior mean; uniqueness and optimality under mean-square error; conditional variance/covariance as remaining uncertainty.
+- Density-level Bayes' rule: derivation of posterior density $f(X|Y) \prop f(Y|X) f_X(X)$ and normalization via marginal $f_Y(Y)$.
+- Bayesian point estimation: conditional expectation $\mathbb{E}[X | Y]$ as the posterior mean; uniqueness and optimality under mean-square error; conditional variance/covariance as remaining uncertainty.
 - Closed-form Gaussian case: joint Gaussian X,Y and the linear update formula for the posterior mean and covariance (Kalman-like gain).
 - Conjugate Beta–Binomial examples:
-  - Coin bias: Beta(α, β) prior, Binomial likelihood → Beta(α+h, β+t) posterior; code to plot prior/posterior and means.
-  - Loan default probability: domain-motivated Beta(5,95) prior updated by Binomial data (e.g., 16 defaults out of 200) to show posterior shift and interpretation.
+  - Coin bias: $\operatorname{Beta}(\alpha, \bata)$ prior, Binomial likelihood → $\operatorname{Beta}(\alpha+h, \beta+t)$ posterior; code to plot prior/posterior and means.
+  - Loan default probability: domain-motivated $\operatorname{Beta}(5,95)$ prior updated by Binomial data (e.g., 16 defaults out of 200) to show posterior shift and interpretation.
 - Interactive code: functions that plot prior and posterior Beta densities and annotate prior/posterior means (uses Plotly for interactivity).
 
 #### What you will learn (learning outcomes)
@@ -354,27 +354,27 @@ This repository contains a notebook that explains the Principle of Maximum Entro
 - A clear statement of the Principle of Maximum Entropy and its justification as the least-biased inference given constraints.
 - Derivation of the discrete MaxEnt solution and the generalized Boltzmann (exponential-family) distribution.
 - Recovery of statistical mechanics ensembles:
-  - Microcanonical ensemble → equal a priori probabilities and Boltzmann entropy S = kB ln Ω.
-  - Canonical ensemble → partition function Z, temperature T = 1/(kB λ), Helmholtz free energy, and thermodynamic identities.
+  - Microcanonical ensemble → equal a priori probabilities and Boltzmann entropy $S = k_B \ln{\Omega}$.
+  - Canonical ensemble → partition function $Z$, temperature $T = 1/(k_B \lambda)$, Helmholtz free energy, and thermodynamic identities.
   - Grand canonical ensemble → chemical potential μ, grand potential, and Gibbs free energy connections.
 - Thermodynamic relations and fluctuation formulae (e.g., energy variance ↔ heat capacity).
-- Worked example: quantum harmonic oscillator — explicit Z(T), U(T), S(T), and CV(T).
-- Continuous MaxEnt (Shannon–Jaynes) with a discussion of the reference measure m(x) and derivation of the Gaussian as the MaxEnt density given mean and variance.
+- Worked example: quantum harmonic oscillator — explicit $Z(T), U(T), S(T)$, and $C_V(T)$.
+- Continuous MaxEnt (Shannon–Jaynes) with a discussion of the reference measure $m(x)$ and derivation of the Gaussian as the MaxEnt density given mean and variance.
 - Machine learning application:
-  - Conditional MaxEnt derivation for P(Y|X) and how logistic regression / softmax follows from MaxEnt constraints on feature expectations.
+  - Conditional MaxEnt derivation for $P(Y|X)$ and how logistic regression / softmax follows from MaxEnt constraints on feature expectations.
   - Practical notes on the equivalence between maximizing conditional entropy under feature constraints and training with cross-entropy.
 - Interactive / runnable code snippets:
   - Plotly visualization of the binary entropy function.
   - Code scaffolding and examples suitable for Colab or a local Jupyter environment.
 
 ### Key equations and identities (high-level)
-- Shannon entropy (discrete): H(p) = −∑ p_j ln p_j
-- MaxEnt solution (discrete): p_j* = (1/Z) exp(−∑ λ_i f_i(x_j)), Z = ∑ exp(−∑ λ_i f_i(x_j))
-- Continuous Shannon–Jaynes entropy: H_c[p] = −∫ p(x) ln(p(x)/m(x)) dx
-- Canonical ensemble: p_j ∝ e^{−E_j/(k_B T)}, Z = ∑ e^{−E_j/(k_B T)}
-- Thermodynamic relations: F = −k_B T ln Z, S = −(∂F/∂T)_V, U = F + TS
-- Fluctuation relation: C_V = (1/(k_B T^2)) (⟨E^2⟩ − ⟨E⟩^2)
-- Conditional MaxEnt → Softmax: P(Y=c | x) = exp(w_c · f(x)) / ∑_l exp(w_l · f(x))
+- Shannon entropy (discrete): $H(p) = −\Sum p_j \ln{p_j}
+- MaxEnt solution (discrete): $p_j^* = (1/Z) \exp(−\sum \lambda_i f_i(x_j))$, $Z = \sum_{j} \exp(−\sum_{i} \lambda_i f_i(x_j))$
+- Continuous Shannon–Jaynes entropy: $H_c[p] = −\int p(x) \ln{(p(x)/m(x))} dx$
+- Canonical ensemble: $p_j \prop e^{−E_j/(k_B T)}$, $Z = \sum e^{−E_j/(k_B T)}$
+- Thermodynamic relations: $F = −k_B T \ln{Z}, $S = −(\partial F/\partial T)_V$, $U = F + TS$
+- Fluctuation relation: $C_V = (1/(k_B T^2)) (⟨E^2⟩ − ⟨E⟩^2)$
+- Conditional MaxEnt → Softmax: $P(Y=c | x) = \exp(w_c · f(x)) / \Sum_l exp(w_l · f(x))$
 
 
 ### Learning outcomes / key takeaways
@@ -484,7 +484,7 @@ This Jupyter notebook provides a comprehensive mathematical treatment of **hypot
 3. **Decision Rule & P-values** - Explains how to:
    - Construct rejection regions from test statistics
    - Calculate p-values as the smallest significance level at which you'd reject H₀
-   - Apply the decision rule: reject H₀ if p-value ≤ α
+   - Apply the decision rule: reject $H_0$ if p-value $\leq \alpha$
 
 4. **Standard Roadmap** - The five-step process for any hypothesis test:
    - State hypotheses
