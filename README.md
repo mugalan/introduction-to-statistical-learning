@@ -390,13 +390,13 @@ This repository contains a notebook that explains the Principle of Maximum Entro
 
 The `sample-answers` directory contains worked solutions to assignments covering key statistical learning and data science concepts:
 
-- **[Bayesian_Inference_Assignment_Answers.ipynb](./Bayesian_Inference_Assignment_Answers.ipynb)** - Solutions demonstrating Bayesian inference techniques and applications
-- **[conditional_expectation_assignment_answers.ipynb](./conditional_expectation_assignment_answers.ipynb)** - Worked examples on conditional expectation and related probability concepts
-- **[data_analysis_assignment_answers.ipynb](./data_analysis_assignment_answers.ipynb)** - Comprehensive solutions for data analysis tasks and methodologies
-- **[data_analysis_cookbook_sample_answer.ipynb](./data_analysis_cookbook_sample_answer.ipynb)** - Practical cookbook-style examples for common data analysis workflows
-- **[entropy_assignment_answers.ipynb](./entropy_assignment_answers.ipynb)** - Detailed solutions exploring entropy concepts and their applications
-- **[fundamentals_of_probability_assignment_answers.ipynb](./fundamentals_of_probability_assignment_answers.ipynb)** - Foundational probability theory problems and solutions
-- **[max_entropy_inference_assignment_answers.ipynb](./max_entropy_inference_assignment_answers.ipynb)** - Advanced solutions for maximum entropy inference methods
+- **[Bayesian_Inference_Assignment_Answers.ipynb](./sample-answers/Bayesian_Inference_Assignment_Answers.ipynb)** - Solutions demonstrating Bayesian inference techniques and applications
+- **[conditional_expectation_assignment_answers.ipynb](./sample-answers/conditional_expectation_assignment_answers.ipynb)** - Worked examples on conditional expectation and related probability concepts
+- **[data_analysis_assignment_answers.ipynb](./sample-answers/data_analysis_assignment_answers.ipynb)** - Comprehensive solutions for data analysis tasks and methodologies
+- **[data_analysis_cookbook_sample_answer.ipynb](./sample-answers/data_analysis_cookbook_sample_answer.ipynb)** - Practical cookbook-style examples for common data analysis workflows
+- **[entropy_assignment_answers.ipynb](./sample-answers/entropy_assignment_answers.ipynb)** - Detailed solutions exploring entropy concepts and their applications
+- **[fundamentals_of_probability_assignment_answers.ipynb](./sample-answers/fundamentals_of_probability_assignment_answers.ipynb)** - Foundational probability theory problems and solutions
+- **[max_entropy_inference_assignment_answers.ipynb](./sample-answers/max_entropy_inference_assignment_answers.ipynb)** - Advanced solutions for maximum entropy inference methods
 
 These Jupyter notebooks provide reference implementations and detailed explanations for the core topics covered in this introduction to statistical learning, serving as both learning resources and verification guides for students working through the assignments.
 
