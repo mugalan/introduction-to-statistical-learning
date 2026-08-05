@@ -25,8 +25,6 @@ Here is a quick overview of what is available:
   - data_analysis_cookbook.ipynb — usage cookbook and examples. [Open](https://github.com/mugalan/data-analysis-tool/blob/main/data_analysis_cookbook.ipynb)
   - numerical_data_analysis.ipynb — mathematical treatment and worked examples for hypothesis testing. [Open](https://github.com/mugalan/data-analysis-tool/blob/main/numerical_data_analysis.ipynb)
 
-
-
 ---
 
 ## Review of Probability Theory
@@ -323,8 +321,8 @@ This notebook treats Bayesian inference as "learning under uncertainty" and show
 - Bayesian point estimation: conditional expectation $\mathbb{E}[X | Y]$ as the posterior mean; uniqueness and optimality under mean-square error; conditional variance/covariance as remaining uncertainty.
 - Closed-form Gaussian case: joint Gaussian X,Y and the linear update formula for the posterior mean and covariance (Kalman-like gain).
 - Conjugate Beta–Binomial examples:
-  - Coin bias: $\operatorname{Beta}(\alpha, \bata)$ prior, Binomial likelihood → $\operatorname{Beta}(\alpha+h, \beta+t)$ posterior; code to plot prior/posterior and means.
-  - Loan default probability: domain-motivated $\operatorname{Beta}(5,95)$ prior updated by Binomial data (e.g., 16 defaults out of 200) to show posterior shift and interpretation.
+  - Coin bias: ${Beta}(\alpha, \bata)$ prior, Binomial likelihood → ${Beta}(\alpha+h, \beta+t)$ posterior; code to plot prior/posterior and means.
+  - Loan default probability: domain-motivated ${Beta}(5,95)$ prior updated by Binomial data (e.g., 16 defaults out of 200) to show posterior shift and interpretation.
 - Interactive code: functions that plot prior and posterior Beta densities and annotate prior/posterior means (uses Plotly for interactivity).
 
 #### What you will learn (learning outcomes)
