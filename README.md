@@ -184,7 +184,7 @@ This notebook provides a rigorous, measure-theoretic introduction to conditional
 
 #### 3. **Evaluating Conditional Expectation at $Y=y$**
 - Clarifies the distinction between $\mathbb{E}[X|Y]$ (a random variable) and $\mathbb{E}[X|Y=y]$ (a numerical value)
-- Shows that $\mathbb{E}[X|Y=y] = \int_{\mathscr{X}} x \, f_{X|Y}(x|y) \, dx$
+- Shows that $\mathbb{E}[X|Y=y] = \int_{\mathscr{X}} x  f_{X|Y}(x|y) dx$
 - Explains the conditional random variable $X|Y=y$ as a family of distributions parameterized by $y$
 
 #### 4. **Important Results**
@@ -300,7 +300,7 @@ Gaussian Process Regression (GPR) is a practical application of conditional expe
 ### Linear Regression
 
 #### Overview 
-A worked example showing how conditional expectation is used in multivariate linear regression is available in the repository. The notebook derives the conditional distribution $Y | X = x$ (showing $\mathbb{E}[Y|X=x] = \beta x + \beta_0$ and ${Var}[Y|X=x] = \Sigma_v$), presents the maximum-likelihood / OLS solution, and includes a hands-on example with a green-building dataset.
+A worked example showing how conditional expectation is used in multivariate linear regression is available in the repository. The notebook derives the conditional distribution $Y | X = x$ (showing $\mathbb{E}[Y|X=x] = \beta x + \beta_0$ and $\mathrm{Var}[Y|X=x] = \Sigma_v$), presents the maximum-likelihood / OLS solution, and includes a hands-on example with a green-building dataset.
 
 #### Google Colab notebook
 - [linear_regression.ipynb](./linear_regression.ipynb) — interactive notebook with theory, derivations, simulations, and visualizations.
@@ -321,8 +321,8 @@ This notebook treats Bayesian inference as "learning under uncertainty" and show
 - Bayesian point estimation: conditional expectation $\mathbb{E}[X | Y]$ as the posterior mean; uniqueness and optimality under mean-square error; conditional variance/covariance as remaining uncertainty.
 - Closed-form Gaussian case: joint Gaussian X,Y and the linear update formula for the posterior mean and covariance (Kalman-like gain).
 - Conjugate Beta–Binomial examples:
-  - Coin bias: ${Beta}(\alpha, \beta)$ prior, Binomial likelihood → ${Beta}(\alpha+h, \beta+t)$ posterior; code to plot prior/posterior and means.
-  - Loan default probability: domain-motivated ${Beta}(5,95)$ prior updated by Binomial data (e.g., 16 defaults out of 200) to show posterior shift and interpretation.
+  - Coin bias: $\mathrm{Beta}(\alpha, \beta)$ prior, Binomial likelihood → $\mathrm{Beta}(\alpha+h, \beta+t)$ posterior; code to plot prior/posterior and means.
+  - Loan default probability: domain-motivated $\mathrm{Beta}(5,95)$ prior updated by Binomial data (e.g., 16 defaults out of 200) to show posterior shift and interpretation.
 - Interactive code: functions that plot prior and posterior Beta densities and annotate prior/posterior means (uses Plotly for interactivity).
 
 #### What you will learn (learning outcomes)
