@@ -11,8 +11,8 @@ Here is a quick overview of what is available:
   - Kalman Filter — Recursive state estimation examples and simulations (1-D, 2-D, HVAC). [Open notebook](./Kalman_Filter.ipynb)
   - Gaussian Process Regression — Bayesian nonparametric regression, interpolation, and uncertainty quantification. [Open notebook](./gaussian_process_regression.ipynb)
   - Linear Regression — Conditional distribution derivation and links to OLS/estimation. [Open notebook](./linear_regression.ipynb)
-  - Bayesian Inference — Measure-theoretic Bayes, conjugate examples (Beta–Binomial), and visualization of prior→posterior updates. [Open notebook](./Bayesian_Inference_Introduction.ipynb)
-- Maximum Entropy Inference — Jaynes’ MaxEnt principle, derivation of exponential-family solutions, thermodynamic connections, and ML applications (softmax/logistic). [Open notebook](./maximum_entropy_inference_statistical_thermodynamics_and_ML.ipynb)
+  - Bayesian Inference — Measure-theoretic Bayes, conjugate models, posterior updating, and applications including Gaussian Mixture Model (GMM) clustering. [Open notebook](./Bayesian_Inference_Introduction.ipynb)
+  - Maximum Entropy Inference — Jaynes’ MaxEnt principle, derivation of exponential-family solutions, thermodynamic connections, and classification through conditional MaxEnt (logistic regression and softmax). (softmax/logistic). [Open notebook](./maximum_entropy_inference_statistical_thermodynamics_and_ML.ipynb)
 - Assignments / Sample Answers — Worked solutions for assignments across the repo topics (useful reference answers):
   - Bayesian_Inference_Assignment_Answers.ipynb — [Open](./sample-answers/Bayesian_Inference_Assignment_Answers.ipynb)
   - conditional_expectation_assignment_answers.ipynb — [Open](./sample-answers/conditional_expectation_assignment_answers.ipynb)
@@ -333,6 +333,7 @@ This notebook treats Bayesian inference as "learning under uncertainty" and show
 - How to visualize prior-to-posterior updating and interpret shifts in beliefs.
 
 #### Examples 
+- Gaussian Mixture Model (GMM) clustering, developed through conditional probability and Bayesian updating, with cluster responsibilities interpreted as posterior probabilities of latent class membership.
 - Item Response Theory (IRT), which uses Bayesian hierarchical models to infer examinees' latent abilities and item parameters while properly accounting for uncertainty and pooling information across items/people,
 - Click‑Through Rate (CTR) prediction, which uses Bayesian logistic or hierarchical models to produce probabilistic estimates of user click probabilities, enable online updating, and support uncertainty-aware decision making.
 
@@ -404,7 +405,7 @@ These Jupyter notebooks provide reference implementations and detailed explanati
 
 ## Data Analysis Toolbox
 
-**data-analysis-tool** is a Python library that automates data cleaning, exploration, and interactive visualization for data science workflows, with built-in support for Google Colab. It handles common preprocessing tasks like missing value imputation, outlier detection, scaling, encoding, and generates rich Plotly-based visualizations for both exploratory analysis and correlation mapping.
+**data-analysis-tool** is a Python library that automates data cleaning, exploration, and interactive visualization for data science workflows, with built-in support for Google Colab. It handles common preprocessing tasks like missing value imputation, outlier detection, scaling, encoding, and generates rich Plotly-based visualizations for both exploratory analysis and correlation mapping. It also contains methods for Principal Component Analysis (PCA) and Factor Analysis as methods for dimensionality reduction and representation of high-dimensional data.
 
 #### Stack
 
@@ -468,7 +469,7 @@ normalized_data = inspector.create_normalized_data_df()
 
 ### Numerical Data Analysis
 
-This Jupyter notebook provides a comprehensive mathematical treatment of **hypothesis testing** in statistics. Here are the key sections:
+This Jupyter notebook provides a comprehensive mathematical treatment of **hypothesis testing** in statistics, the empirical distribution, Principal Component Analysis (PCA) and Factor Analysis as methods for dimensionality reduction and representation of high-dimensional data. Here are the key sections:
 
 #### Topics covered:
 
