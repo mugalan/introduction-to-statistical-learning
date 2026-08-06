@@ -23,7 +23,7 @@ Here is a quick overview of what is available:
   - max_entropy_inference_assignment_answers.ipynb — [Open](./sample-answers/max_entropy_inference_assignment_answers.ipynb)
 - [Data Analysis Toolbox](#data-analysis-toolbox) (data-analysis-tool) — A small Python library for cleaning, exploration, and interactive Plotly visualizations; includes package and example notebooks:
   - data_analysis_cookbook.ipynb — usage cookbook and examples. [Open](https://github.com/mugalan/data-analysis-tool/blob/main/data_analysis_cookbook.ipynb)
-  - numerical_data_analysis.ipynb — mathematical treatment and worked examples for hypothesis testing. [Open](https://github.com/mugalan/data-analysis-tool/blob/main/numerical_data_analysis.ipynb)
+  - numerical_data_analysis.ipynb — mathematical treatment and worked examples for hypothesis testing in statistics, the empirical distribution, Principal Component Analysis (PCA) and Factor Analysis as methods for dimensionality reduction and representation of high-dimensional data. [Open](https://github.com/mugalan/data-analysis-tool/blob/main/numerical_data_analysis.ipynb)
 
 ---
 
