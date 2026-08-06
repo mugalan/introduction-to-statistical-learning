@@ -4,16 +4,16 @@ This course provides a mathematically grounded introduction to statistical learn
 Here is a quick overview of what is available:
 
 - [Review of Probability Theory](#review-of-probability-theory) — A concise, measure-theoretic introduction to probability foundations; includes interactive visualizations and examples. [Open notebook](./review_of_probability_theory.ipynb)
-- Introduction to Information Entropy — Survey of entropy, KL divergence, mutual information, and discrete vs. continuous distinctions with visual examples. [Open notebook](./introduction_to_information_entropy.ipynb)
-- Multivariate Gaussian Distributions — Formulas and intuition for joint, marginal, and conditional Gaussians; entropy and mutual information for Gaussian models. [Open notebook](./Multivariate_Gaussian_Distributions.ipynb)
-- Introduction to Conditional Expectation — Measure-theoretic definition, properties (tower law, factorization), and connections to estimation and ML. [Open notebook](./introduction_to_conditional_expectations.ipynb)
-- Applications of Conditional Expectation — Practical applied notebooks that show conditional expectation in action:
-  - Kalman Filter — Recursive state estimation examples and simulations (1-D, 2-D, HVAC). [Open notebook](./Kalman_Filter.ipynb)
-  - Gaussian Process Regression — Bayesian nonparametric regression, interpolation, and uncertainty quantification. [Open notebook](./gaussian_process_regression.ipynb)
-  - Linear Regression — Conditional distribution derivation and links to OLS/estimation. [Open notebook](./linear_regression.ipynb)
-  - Bayesian Inference — Measure-theoretic Bayes, conjugate models, posterior updating, and applications including Gaussian Mixture Model (GMM) clustering. [Open notebook](./Bayesian_Inference_Introduction.ipynb)
-  - Maximum Entropy Inference — Jaynes’ MaxEnt principle, derivation of exponential-family solutions, thermodynamic connections, and classification through conditional MaxEnt (logistic regression and softmax). (softmax/logistic). [Open notebook](./maximum_entropy_inference_statistical_thermodynamics_and_ML.ipynb)
-- Assignments / Sample Answers — Worked solutions for assignments across the repo topics (useful reference answers):
+- [Introduction to Information Entropy](#introduction-to-information-entropy) — Survey of entropy, KL divergence, mutual information, and discrete vs. continuous distinctions with visual examples. [Open notebook](./introduction_to_information_entropy.ipynb)
+- [Multivariate Gaussian Distributions](#multivariate-gaussian-distributions) — Formulas and intuition for joint, marginal, and conditional Gaussians; entropy and mutual information for Gaussian models. [Open notebook](./Multivariate_Gaussian_Distributions.ipynb)
+- [Introduction to Conditional Expectation](#introduction-to-conditional-expectation) — Measure-theoretic definition, properties (tower law, factorization), and connections to estimation and ML. [Open notebook](./introduction_to_conditional_expectations.ipynb)
+- [Applications of Conditional Expectation](#applications-of-conditional-expectation) — Practical applied notebooks that show conditional expectation in action:
+  - [Kalman Filter](#kalman-filter) — Recursive state estimation examples and simulations (1-D, 2-D, HVAC). [Open notebook](./Kalman_Filter.ipynb)
+  - [Gaussian Process Regression](#gaussian-process-regression) — Bayesian nonparametric regression, interpolation, and uncertainty quantification. [Open notebook](./gaussian_process_regression.ipynb)
+  - [Linear Regression](#linear-regression) — Conditional distribution derivation and links to OLS/estimation. [Open notebook](./linear_regression.ipynb)
+  - [Bayesian Inference](#bayesian-inference) — Measure-theoretic Bayes, conjugate models, posterior updating, and applications including Gaussian Mixture Model (GMM) clustering. [Open notebook](./Bayesian_Inference_Introduction.ipynb)
+- [Maximum Entropy Inference](#maximum-entropy-inference) — Jaynes’ MaxEnt principle, derivation of exponential-family solutions, thermodynamic connections, and classification through conditional MaxEnt (logistic regression and softmax). (softmax/logistic). [Open notebook](./maximum_entropy_inference_statistical_thermodynamics_and_ML.ipynb)
+- [Assignments / Sample Answers](#assignments-sample-answers) — Worked solutions for assignments across the repo topics (useful reference answers):
   - Bayesian_Inference_Assignment_Answers.ipynb — [Open](./sample-answers/Bayesian_Inference_Assignment_Answers.ipynb)
   - conditional_expectation_assignment_answers.ipynb — [Open](./sample-answers/conditional_expectation_assignment_answers.ipynb)
   - data_analysis_assignment_answers.ipynb — [Open](./sample-answers/data_analysis_assignment_answers.ipynb)
