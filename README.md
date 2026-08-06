@@ -13,7 +13,7 @@ Here is a quick overview of what is available:
   - [Linear Regression](#linear-regression) — Conditional distribution derivation and links to OLS/estimation. [Open notebook](./linear_regression.ipynb)
   - [Bayesian Inference](#bayesian-inference) — Measure-theoretic Bayes, conjugate models, posterior updating, and applications including Gaussian Mixture Model (GMM) clustering. [Open notebook](./Bayesian_Inference_Introduction.ipynb)
 - [Maximum Entropy Inference](#maximum-entropy-inference) — Jaynes’ MaxEnt principle, derivation of exponential-family solutions, thermodynamic connections, and classification through conditional MaxEnt (logistic regression and softmax). (softmax/logistic). [Open notebook](./maximum_entropy_inference_statistical_thermodynamics_and_ML.ipynb)
-- [Assignments/Sample Answers](#assignments-sample-answers) — Worked solutions for assignments across the repo topics (useful reference answers):
+- [Assignments/Sample Answers](#assignmentssample-answers) — Worked solutions for assignments across the repo topics (useful reference answers):
   - Bayesian_Inference_Assignment_Answers.ipynb — [Open](./sample-answers/Bayesian_Inference_Assignment_Answers.ipynb)
   - conditional_expectation_assignment_answers.ipynb — [Open](./sample-answers/conditional_expectation_assignment_answers.ipynb)
   - data_analysis_assignment_answers.ipynb — [Open](./sample-answers/data_analysis_assignment_answers.ipynb)
