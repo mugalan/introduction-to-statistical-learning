@@ -3,7 +3,7 @@ This course provides a mathematically grounded introduction to statistical learn
 
 Here is a quick overview of what is available:
 
-- Review of Probability Theory — A concise, measure-theoretic introduction to probability foundations; includes interactive visualizations and examples. [Open notebook](./review_of_probability_theory.ipynb)
+- [Review of Probability Theory](#review-of-probability-theory) — A concise, measure-theoretic introduction to probability foundations; includes interactive visualizations and examples. [Open notebook](./review_of_probability_theory.ipynb)
 - Introduction to Information Entropy — Survey of entropy, KL divergence, mutual information, and discrete vs. continuous distinctions with visual examples. [Open notebook](./introduction_to_information_entropy.ipynb)
 - Multivariate Gaussian Distributions — Formulas and intuition for joint, marginal, and conditional Gaussians; entropy and mutual information for Gaussian models. [Open notebook](./Multivariate_Gaussian_Distributions.ipynb)
 - Introduction to Conditional Expectation — Measure-theoretic definition, properties (tower law, factorization), and connections to estimation and ML. [Open notebook](./introduction_to_conditional_expectations.ipynb)
